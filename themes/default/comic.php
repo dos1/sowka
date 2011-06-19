@@ -1,9 +1,9 @@
 <?include('header.php');?>
-
-<div><?= $comic['id'] ?>. <?= $comic['name'] ?></div>
-<img src="<?= $comic['src'] ?>" alt="<?= $comic['alt'] ?>" title="<?= $comic['alt'] ?>" />
+<div id="strip">
+<h2><?= $comic['name'] ?></h2>
+<img src="<?= $comic['src'] ?>" title="<?= $comic['title'] ?>" />
 <p><?= $comic['comment'] ?></p>
-
+</div>
 <hr />
 
 <p>Komcie: </p>

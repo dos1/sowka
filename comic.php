@@ -6,7 +6,7 @@ if (!isset($_GET['id']) || (!(is_numeric($_GET['id'])))) { $_GET['id']=1; }
 $comic['id']=$_GET['id'];
 $comic['name']='Name';
 $comic['src']=$_CONFIG['comics_path'].'placeholder.png';
-$comic['alt']='Alt text';
+$comic['title']='Title text';
 $comic['comment']='Some comment.';
 
 include('themes/'.$_CONFIG['theme'].'/functions/comments.php');
