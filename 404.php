@@ -1,7 +1,7 @@
 <?
 include('includes/functions.php');
 
-$about['title']='404 Not Found';
-$about['content']='Błąd 404 - Sówka nie istnieje.';
+$error['title']='404 Not Found';
+$error['content']='Błąd 404 - Sówka nie istnieje.';
 
-include('themes/'.$_CONFIG['theme'].'/about.php');
+include('themes/'.$_CONFIG['theme'].'/error.php');
