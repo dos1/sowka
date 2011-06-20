@@ -9,6 +9,11 @@ $comic['src']=$_CONFIG['comics_path'].'placeholder.png';
 $comic['date']=1;
 $comic['title']='Title text';
 $comic['comment']='This is placeholder. I like it.';
+$comic['nav']['first'] = '1';
+$comic['nav']['prev']  = '1';
+$comic['nav']['random']= '1';
+$comic['nav']['next']  = '1';
+$comic['nav']['first'] = '1';
 
 include('themes/'.$_CONFIG['theme'].'/functions/comments.php');
 

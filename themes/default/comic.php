@@ -1,10 +1,18 @@
-<?include('header.php');?>
+<?
+include('header.php');
+function theme_navigation($comic) {
+?>
+<p class="nav"><a href="<?= $comic['nav']['last'] ?>">&lt;&lt;</a> <a href="<?= $comic['nav']['prev'] ?>">&lt;</a> <a href="<?= $comic['nav']['random'] ?>">RANDUM</a> <a href="<?= $comic['nav']['next'] ?>">&gt;</a> <a href="<?= $comic['nav']['first'] ?>">&gt;&gt;</a></p>
+<?
+}
+
+?>
 <div id="strip">
 <h2><?= $comic['name'] ?></h2>
-<p class="nav"><a>&lt;&lt;</a> <a>&lt;</a> <a>RANDUM</a> <a>&gt;</a> <a>&gt;&gt;</a></p>
+<? theme_navigation($comic) ?>
 <img src="<?= $comic['src'] ?>" title="<?= $comic['title'] ?>" />
 <p><?= $comic['comment'] ?></p>
-<p class="nav"><a>&lt;&lt;</a> <a>&lt;</a> <a>RANDUM</a> <a>&gt;</a> <a>&gt;&gt;</a></p>
+<? theme_navigation($comic) ?>
 </div>
 
 <div id="comments">
