@@ -1,1 +1,16 @@
+Options FollowSymLinks
+RewriteEngine On
+
+RewriteRule ^([0-9]*)$ comic.php?id=$1 [L]
+RewriteRule ^blog$ blog.php [L]
+RewriteRule ^blog/([0-9]*)$ blog.php?id=$1 [L]
+RewriteRule ^about$ about.php [L]
+RewriteRule ^login$ login.php [L]
+RewriteRule ^register$ register.php [L]
+RewriteRule ^([0-9]*)/login$ login.php?comic=$1 [L]
+RewriteRule ^([0-9]*)/register$ register.php?comic=$1 [L]
+RewriteRule ^blog/([0-9]*)/login$ login.php?blog=$1 [L]
+RewriteRule ^blog/([0-9]*)/register$ register.php?blog=$1 [L]
+RewriteRule ^licence$ licence.php [L]
+
 ErrorDocument 404 /sowka/404.php
