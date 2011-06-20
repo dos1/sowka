@@ -12,6 +12,7 @@ RewriteRule ^([0-9]*)/register/?$ register.php?comic=$1 [L]
 RewriteRule ^blog/([0-9]*)/login/?$ login.php?blog=$1 [L]
 RewriteRule ^blog/([0-9]*)/register/?$ register.php?blog=$1 [L]
 RewriteRule ^licence/?$ licence.php [L]
+RewriteRule ^archive/?$ archive.php [L]
 
 RewriteRule ^thumbnail/([0-9]*)/(.*)$ thumb.php?width=$1&file=$2 [L]
 
