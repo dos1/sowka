@@ -16,3 +16,4 @@
       margin-top: 20px; z-index: 0; }
  #nav { padding-left: 200px; -moz-transform: rotate(10deg); -webkit-transform: rotate(10deg);  -o-transform: rotate(10deg); transform: rotate(10deg); z-index: 1; }
  .permalink { font-size: 70%; }
+ #strip img { max-width:100%; }

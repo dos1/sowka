@@ -10,7 +10,15 @@ function theme_navigation($comic) {
 <div id="strip">
 <h2><?= $comic['name'] ?></h2>
 <? theme_navigation($comic) ?>
-<img src="/<?= $comic['src'] ?>" title="<?= $comic['title'] ?>" />
+
+<? $size = getimagesize($comic['src']);
+   if ($size[0]>$_THEME['width']) {
+$height = $_THEME['width'] / ($size[0]/$size[1]);
+ ?>
+<a href="/<?= $comic['src'] ?>"><img src="/image/<?= $_THEME['width'] ?>/<?= $comic['src'] ?>" title="<?= $comic['title'] ?>" width="<?= $_THEME['width'] ?>" height="<?= $height ?>" /></a>
+  <? } else {?>
+<img src="/<?= $comic['src'] ?>" title="<?= $comic['title'] ?>" <?= $size[3] ?>/>
+<? } ?>
 <p><?= $comic['comment'] ?></p>
 <? theme_navigation($comic) ?>
 <p class="permalink">Permalink: <?= $_CONFIG['siteurl'] ?><?= $comic['id'] ?>/<br/>

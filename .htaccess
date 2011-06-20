@@ -13,6 +13,8 @@ RewriteRule ^blog/([0-9]*)/login/?$ login.php?blog=$1 [L]
 RewriteRule ^blog/([0-9]*)/register/?$ register.php?blog=$1 [L]
 RewriteRule ^licence/?$ licence.php [L]
 
+RewriteRule ^image/([0-9]*)/(.*)$ image.php?width=$1&file=$2 [L]
+
 #RewriteRule ^blog/[0-9]*/(.*)$ $1 [L]
 #RewriteRule ^blog/(.*)$ $1 [L]
 #RewriteRule ^[0-9]*/(.*)$ $1 [L]

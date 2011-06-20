@@ -1,4 +1,6 @@
-<? include('includes/functions.php'); ?>
+<? include('includes/functions.php'); 
+$_THEME['width'] = 600;
+?>
 <? /*echo '<?xml version="1.0" encoding="utf-8"?>';
    echo '<?xml-stylesheet type="text/css" href="/themes/default/style.css"?>';*/
 ?>
