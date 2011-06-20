@@ -3,3 +3,6 @@ themes/sowka
 strips/*.png
 strips/*.jpg
 strips/*.gif
+thumbnails/*
+!thumbnails/index.html
+!thubnails/.htaccess
