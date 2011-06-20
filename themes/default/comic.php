@@ -2,7 +2,7 @@
 include('header.php');
 function theme_navigation($comic) {
 ?>
-<p class="nav"><a href="/<?= $comic['nav']['last'] ?>">&lt;&lt;</a> <a href="/<?= $comic['nav']['prev'] ?>">&lt;</a> <a href="/<?= $comic['nav']['random'] ?>">RANDUM</a> <a href="/<?= $comic['nav']['next'] ?>">&gt;</a> <a href="/<?= $comic['nav']['first'] ?>">&gt;&gt;</a></p>
+<p class="nav"><a href="/<?= $comic['nav']['first'] ?>">&lt;&lt;</a> <a href="/<?= $comic['nav']['prev'] ?>">&lt;</a> <a href="/<?= $comic['nav']['random'] ?>">RANDUM</a> <a href="/<?= $comic['nav']['next'] ?>">&gt;</a> <a href="/">&gt;&gt;</a></p>
 <?
 }
 

@@ -1,19 +1,30 @@
 <?
-include('includes/functions.php');
+include_once('includes/functions.php');
 
-if (!isset($_GET['id']) || (!(is_numeric($_GET['id'])))) { $_GET['id']=1; }
+if (!isset($_GET['id']) || (!(is_numeric($_GET['id'])))) { $_GET['id']=-1; }
 
-$comic['id']=$_GET['id'];
-$comic['name']='Placeholder strip';
-$comic['src']=$_CONFIG['comics_path'].'placeholder.png';
-$comic['date']=1;
-$comic['title']='Title text';
-$comic['comment']='This is placeholder. I like it.';
-$comic['nav']['first'] = '1';
-$comic['nav']['prev']  = '1';
-$comic['nav']['random']= '1';
-$comic['nav']['next']  = '1';
-$comic['nav']['first'] = '1';
+if ($_GET['id']>0) {
+  $q = mysql_query("SELECT * FROM strips WHERE id=".$_GET['id']);
+}
+else {
+  $q = mysql_query("SELECT * FROM strips ORDER BY id DESC LIMIT 1");
+}
+
+$comic = mysql_fetch_assoc($q);
+
+if (!$comic) { include('404.php'); exit(); }
+
+$comic['src']=$_CONFIG['comics_path'].$comic['src'];
+
+$id = mysql_fetch_array(mysql_query("SELECT id FROM strips ORDER BY id ASC LIMIT 1"));
+$comic['nav']['first'] = $id[0];
+$id = mysql_fetch_array(mysql_query("SELECT id FROM strips WHERE id < ".$comic['id']." ORDER BY id DESC LIMIT 1"));
+if (!$id[0]) $id[0]=$comic['nav']['first'];
+$comic['nav']['prev']= $id[0];
+$id = mysql_fetch_array(mysql_query("SELECT id FROM strips ORDER BY RAND() LIMIT 1"));
+$comic['nav']['random'] = $id[0];
+$id = mysql_fetch_array(mysql_query("SELECT id FROM strips WHERE id > ".$comic['id']." ORDER BY id ASC LIMIT 1"));
+$comic['nav']['next'] = $id[0];
 
 include('themes/'.$_CONFIG['theme'].'/functions/comments.php');
 
