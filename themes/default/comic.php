@@ -13,7 +13,8 @@ function theme_navigation($comic) {
 <img src="/<?= $comic['src'] ?>" title="<?= $comic['title'] ?>" />
 <p><?= $comic['comment'] ?></p>
 <? theme_navigation($comic) ?>
-<p class="permalink">Permalink: <?= $_CONFIG['siteurl'] ?><?= $comic['id'] ?>/</p>
+<p class="permalink">Permalink: <?= $_CONFIG['siteurl'] ?><?= $comic['id'] ?>/<br/>
+URL: <?= $_CONFIG['siteurl'] ?><?= $comic['src'] ?></p>
 </div>
 
 <div id="comments">
