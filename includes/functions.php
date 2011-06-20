@@ -13,7 +13,7 @@ function facebook_init() {
 <div id="fb-root"></div>
     <script>
       window.fbAsyncInit = function() {
-        FB.init({appId: '131905576888350', status: true, cookie: true,
+        FB.init({appId: '<?= $_CONFIG['fb']['appip'] ?>', status: true, cookie: true,
                  xfbml: true});
       };
       (function() {
@@ -26,3 +26,7 @@ function facebook_init() {
       }());
     </script>
 <? }
+
+function twitter_init() {
+?> <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> <?
+}

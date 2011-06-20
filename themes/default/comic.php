@@ -20,6 +20,8 @@ $height = $_THEME['width'] / ($size[0]/$size[1]);
 <img src="/<?= $comic['src'] ?>" title="<?= $comic['title'] ?>" <?= $size[3] ?>/>
 <? } ?>
 <p><?= $comic['comment'] ?></p>
+<p class="share"><fb:like style="position: relative; top: -4px;" layout="button_count" action="like" href="<?= $_CONFIG['siteurl'] ?><?= $comic['id'] ?>/"></fb:like>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" style="margin: 0px; padding: 0px;">Tweet</a></p>
 <? theme_navigation($comic) ?>
 <p class="permalink">Permalink: <?= $_CONFIG['siteurl'] ?><?= $comic['id'] ?>/<br/>
 URL: <?= $_CONFIG['siteurl'] ?><?= $comic['src'] ?></p>

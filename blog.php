@@ -30,4 +30,7 @@ foreach ($comments as $comment) {
   $page_comments.=theme_comment($comment[0], $comment[1], $comment[2], $comment[3], $comment[4]);
 }
 
+$page_permalink = $_CONFIG['siteurl'].'blog/'.$blog['id'].'/';
+$page_title = $blog['name'];
+
 include_once('themes/'.$_CONFIG['theme'].'/blog.php');
