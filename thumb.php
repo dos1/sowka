@@ -1,5 +1,5 @@
 <?
-include('includes/functions.php');
+include_once('includes/functions.php');
 
 if (!file_exists($_GET['file'])) {
   header('Location: '.$_CONFIG['siteurl'].$_GET['file']);

@@ -1,11 +1,11 @@
-<? include('includes/functions.php'); 
+<?
 $_THEME['width'] = 600;
 ?>
 <? /*echo '<?xml version="1.0" encoding="utf-8"?>';
    echo '<?xml-stylesheet type="text/css" href="/themes/default/style.css"?>';*/
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
 <link rel="stylesheet" href="/themes/default/style.css" />
 <meta charset="utf-8" />

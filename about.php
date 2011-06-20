@@ -1,7 +1,7 @@
 <?
-include('includes/functions.php');
+include_once('includes/functions.php');
 
 $about['title']='O Sówce';
 $about['content']='This is placeholder. Let\'s talk about it.';
 
-include('themes/'.$_CONFIG['theme'].'/about.php');
+include_once('themes/'.$_CONFIG['theme'].'/about.php');
