@@ -1,12 +1,23 @@
 <?
-include('includes/functions.php');
+include_once('includes/functions.php');
 
-if (!isset($_GET['id']) || (!(is_numeric($_GET['id'])))) { $_GET['id']=1; }
+if (!isset($_GET['id']) || (!(is_numeric($_GET['id'])))) { $_GET['id']=-1; }
 
-$blog['id']=$_GET['id'];
-$blog['name']='Placeholder blognote';
-$blog['date']=1;
-$blog['content']='This is placeholder. Worth note.';
+if ($_GET['id']>0) {
+  $q = mysql_query("SELECT * FROM blog WHERE id=".$_GET['id']);
+}
+else {
+  $q = mysql_query("SELECT * FROM blog ORDER BY id DESC LIMIT 1");
+}
+
+$blog = mysql_fetch_assoc($q);
+
+if (!$blog) { include('404.php'); exit(); }
+
+$id = mysql_fetch_array(mysql_query("SELECT * FROM blog WHERE id < ".$blog['id']." ORDER BY id DESC LIMIT 1"));
+$blog['nav']['prev'] = $id;
+$id = mysql_fetch_array(mysql_query("SELECT * FROM blog WHERE id > ".$blog['id']." ORDER BY id ASC LIMIT 1"));
+$blog['nav']['next'] = $id;
 
 include('themes/'.$_CONFIG['theme'].'/functions/comments.php');
 
