@@ -30,3 +30,13 @@ function facebook_init() {
 function twitter_init() {
 ?> <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> <?
 }
+
+function buzz_init() {
+?> <script type="text/javascript" src="http://www.google.com/buzz/api/button.js"></script> <?
+}
+
+function plusone_init() {
+?> <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+  {lang: 'pl'}
+</script> <?
+}

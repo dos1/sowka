@@ -2,7 +2,7 @@
 include('header.php');
 function theme_navigation($comic) {
 ?>
-<p class="nav"><a href="/<?= $comic['nav']['first'] ?>">&lt;&lt;</a> <a href="/<?= $comic['nav']['prev'] ?>">&lt;</a> <a href="/<?= $comic['nav']['random'] ?>">RANDUM</a> <a href="/<?= $comic['nav']['next'] ?>">&gt;</a> <a href="/">&gt;&gt;</a></p>
+<p class="nav"><a href="/<?= $comic['nav']['first'] ?>/">&lt;&lt;</a> <a href="/<?= $comic['nav']['prev'] ?>/">&lt;</a> <a href="/<?= $comic['nav']['random'] ?>/">RANDUM</a> <a href="/<?= $comic['nav']['next'] ?>/">&gt;</a> <a href="/">&gt;&gt;</a> </p>
 <?
 }
 
@@ -20,8 +20,12 @@ $height = $_THEME['width'] / ($size[0]/$size[1]);
 <img src="/<?= $comic['src'] ?>" title="<?= $comic['title'] ?>" <?= $size[3] ?>/>
 <? } ?>
 <p><?= $comic['comment'] ?></p>
-<p class="share"><fb:like style="position: relative; top: -4px;" layout="button_count" action="like" href="<?= $_CONFIG['siteurl'] ?><?= $comic['id'] ?>/"></fb:like>
-<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" style="margin: 0px; padding: 0px;">Tweet</a></p>
+<p class="share">
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a>
+<a title="Publikuj w usłudze Google Buzz" class="google-buzz-button" style="position: relative; top: -6px;" href="http://www.google.com/buzz/post" data-button-style="small-button" data-locale="pl"></a>
+<g:plusone size="medium" style="position: relative; top: -6px;" count="false"></g:plusone>
+<fb:like style="position: relative; top: -4px;" layout="button_count" href="<?= $_CONFIG['siteurl'] ?><?= $comic['id'] ?>/"></fb:like>
+</p>
 <? theme_navigation($comic) ?>
 <p class="permalink">Permalink: <?= $_CONFIG['siteurl'] ?><?= $comic['id'] ?>/<br/>
 URL: <?= $_CONFIG['siteurl'] ?><?= $comic['src'] ?></p>

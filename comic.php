@@ -24,6 +24,7 @@ $comic['nav']['prev']= $id[0];
 $id = mysql_fetch_array(mysql_query("SELECT id FROM strips ORDER BY RAND() LIMIT 1"));
 $comic['nav']['random'] = $id[0];
 $id = mysql_fetch_array(mysql_query("SELECT id FROM strips WHERE id > ".$comic['id']." ORDER BY id ASC LIMIT 1"));
+if (!$id) $id[0] = $comic['id'];
 $comic['nav']['next'] = $id[0];
 
 include_once('themes/'.$_CONFIG['theme'].'/functions/comments.php');
