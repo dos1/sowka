@@ -1,8 +1,9 @@
 conf
 themes/sowka
-strips/*.png
-strips/*.jpg
-strips/*.gif
+images/*.png
+images/*.jpg
+images/*.gif
+favicon.*
 thumbnails/*
 !thumbnails/index.html
 !thubnails/.htaccess

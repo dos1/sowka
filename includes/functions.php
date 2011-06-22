@@ -9,11 +9,12 @@ mysql_select_db ($_CONFIG['mysql_db']);
 
 
 function facebook_init() {
+global $_CONFIG;
 ?>
 <div id="fb-root"></div>
     <script>
       window.fbAsyncInit = function() {
-        FB.init({appId: '<?= $_CONFIG['fb']['appip'] ?>', status: true, cookie: true,
+        FB.init({appId: '<?= $_CONFIG['fb']['appid'] ?>', status: true, cookie: true,
                  xfbml: true});
       };
       (function() {

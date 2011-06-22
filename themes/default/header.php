@@ -10,10 +10,11 @@ $_THEME['width'] = 600;
 <meta property="og:title" content="<? echo $_CONFIG['sitename']; if ($page_title) { echo ' - '.$page_title; } ?>" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="<? if ($page_permalink) { echo $page_permalink; } else { echo 'http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']; }; ?>" />
-<meta property="og:image" content="<?= $page_image ?>" />
+<meta property="og:image" content="<? if ($page_image) { echo $page_image; } else { echo $_CONFIG['siteurl'].$_CONFIG['comics_path'].'logo.png'; } ?>" />
 <meta property="og:site_name" content="<?= $_CONFIG['sitename'] ?>" />
 <meta property="fb:admins" content="<?= $_CONFIG['fb']['admins'] ?>" />
 <link rel="stylesheet" href="/themes/default/style.css" />
+<link rel="shortcut icon" href="/favicon.png" />
 <meta charset="utf-8" />
 <title><?= $_CONFIG['sitename'] ?><? if ($page_title) { echo " - ".$page_title; } ?></title>
 </head>
