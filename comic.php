@@ -33,6 +33,7 @@ $comments = array(
               array(1, 'dos', 'http://dosowisko.net/', 168956789, 'Komci póki co ni ma.'),
               array(2, 'dosia', 'http://dosia.dosowisko.net/', 5456789678, 'Jak nie ma, jak są?'),
               array(3, 'Kasia Nałęcka', 'http://kasia.dosowisko.net/', 5456799678, 'Nekrofilka się znalazła, spójrz na datę!'),
+              array(10, 'Bardzo bardzo bardzo hmm ciekawe jak bardzo, bardzo ale to bardzo długi nick. O, taki długi!', 'http://dosowisko.net/', 168956789, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio augue, consectetur in posuere eget, tempor quis nisl. Aliquam quis odio nulla. Proin ultrices libero a dui feugiat faucibus. Morbi tempor nunc eget nulla mollis tristique. Quisque fringilla dignissim mollis. Aenean pretium bibendum aliquet. Morbi venenatis magna id nisi varius posuere gravida sapien imperdiet. Cras congue, urna hendrerit rutrum varius, ipsum justo consectetur ipsum, nec convallis mi diam id leo. Phasellus eget quam nunc. Donec pharetra viverra mauris, ut pretium enim porta a. Sed iaculis blandit odio.'),
               array(666, 'Ja', 'http://ja.dosowisko.net/', time(), 'To jest całkiem świeży komć.')
             );
 
