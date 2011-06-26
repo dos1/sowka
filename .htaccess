@@ -21,3 +21,17 @@ RewriteRule ^thumbnail/([0-9]*)/(.*)$ thumb.php?width=$1&file=$2 [L]
 #RewriteRule ^[0-9]*/(.*)$ $1 [L]
 
 ErrorDocument 404 /404.php
+
+AddType text/x-component .htc
+
+AddType font/ttf .ttf
+ExpiresActive On
+ExpiresDefault A900
+ExpiresByType text/html A30
+ExpiresByType application/html+xml A30
+ExpiresByType application/rss+xml A600
+ExpiresByType text/css A900
+ExpiresByType font/ttf A6048000
+AddOutputFilterByType DEFLATE font/ttf
+
+#ExpiresByType text/css A0
