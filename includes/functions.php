@@ -29,15 +29,15 @@ global $_CONFIG;
 <? }
 
 function twitter_init() {
-?> <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> <?
+?> <script type="text/javascript" async="async" src="http://platform.twitter.com/widgets.js"></script> <?
 }
 
 function buzz_init() {
-?> <script type="text/javascript" src="http://www.google.com/buzz/api/button.js"></script> <?
+?> <script type="text/javascript" async="async" src="http://www.google.com/buzz/api/button.js"></script> <?
 }
 
 function plusone_init() {
-?> <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+?> <script type="text/javascript" async="async" src="https://apis.google.com/js/plusone.js">
   {lang: 'pl'}
 </script> <?
 }
