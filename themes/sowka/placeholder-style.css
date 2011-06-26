@@ -1,0 +1,32 @@
+#logo .like
+{
+        text-align: center;
+        width: 500px;
+	position:absolute;
+	right:0;
+	top:-10px;
+        color: white;
+        text-shadow: 1px 1px 4px black;
+        font-size: 20px;
+}
+#logo .like #premiera2 {
+        margin-top: -10px;
+        font-size: 40px;
+        font-weight: bold;
+}
+#nav div
+{
+        width:150px;
+        height:53px;
+        background-image:url('images/menu.png');
+        margin-left:10px;
+        margin-bottom:30px;
+        display:inline-block;
+        text-decoration:none;
+        color:white;
+        padding-top:18px;
+        font-size:20px;
+        text-shadow:1px 1px 2px black;
+        font-family:"DejaVu Sans Condensed", "DejaVu Sans", "Helvetica", Sans;
+        font-weight:bold;
+}

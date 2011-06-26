@@ -1,0 +1,16 @@
+#content {
+	background-color: #ccefff;
+}
+#devwarning {
+	background-color: #deefff;
+}
+.likeme {
+        behavior: url("/themes/sowka/border-radius.htc");
+	background-color: #deefff;
+}
+.nav a {
+	background-color: #ddeeee;
+}
+#comments .comment .comment-user .comment-user-info a:hover {
+	background-color: #ffffff;
+}

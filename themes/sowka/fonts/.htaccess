@@ -1,0 +1,4 @@
+#AddType font/ttf .ttf
+#ExpiresActive On
+#ExpiresByType font/ttf A99999999
+#AddOutputFilterByType DEFLATE font/ttf

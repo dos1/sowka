@@ -1,0 +1,209 @@
+ body { 
+  background-color: #59b4cf;
+  background-image: url('images/background.jpg');
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+ margin: 0;
+ padding: 0;
+ color: black; font-family: sans-serif; font-size: 16px;
+}
+#devwarning {
+height: 18px;
+width: 100%;
+background-color: rgba(255, 255, 255, 0.5);
+color: black;
+text-align: center;
+font-size: 14px;
+padding-top: 2px;
+text-shadow: 0px 0px 10px white;
+}
+#logo {
+position: relative;
+width: 1000px;
+margin-top: 15px;
+margin-bottom: -5px;
+height: 190px;
+margin-left: auto;
+margin-right: auto;
+}
+
+ #wrapper { 
+width: 800px;
+/*width: 800px; */
+/*background-color: white;
+background-color: rgba(255, 255, 255, 0.95); */
+border: 4px solid white;
+border-color: rgba(20, 140, 255, 0.4); border-radius: 5px;
+border-width: 95px 108px 103px 108px;
+-moz-border-image: url('images/deska.png') 95 108 103 108 stretch repeat;
+-webkit-border-image: url('images/deska.png') 95 108 103 108 stretch repeat;
+-o-border-image: url('images/deska.png') 95 108 103 108 stretch repeat;
+border-image: url('images/deska.png') 95 108 103 108 stretch repeat;
+            margin-left: auto; margin-right: auto; padding: 4px 4px 4px 4px;
+min-height: 100%;
+margin-bottom: -103px;
+}
+ h1, h2, .share, #strip, #about, #login, #archive, #footer, #error, #blog .nav { text-align: center; }
+
+#content {
+margin-left: -17px;
+margin-right: -9px;
+margin-bottom: -4px;
+margin-top: -4px;
+padding: 20px 20px 20px 20px;
+background-color: rgba(255, 255, 255, 0.5);
+background-image: url('images/shadow.png');
+background-repeat: repeat-x;
+}
+
+ #error { border: 4px solid red; margin-top: 5px; background-color: rgba(255,0,0,0.2); 
+background-image: url('images/sowka-error.png');
+background-position: 20px 20px;
+padding-left:140px;
+padding-top: 60px;
+background-repeat: no-repeat;
+min-height:120px;
+}
+ a { color: black; }
+ a:hover, h1 a { text-decoration: none; }
+
+ #blog { padding: 0px 10px 0px 10px; }
+ #comments { padding: 10px 10px 10px 10px; margin: 5px 5px 5px 5px;
+             border: 1px solid #aaaaaa; border-radius: 10px; padding-top: 0px; }
+ #nav { text-align: center; position: absolute; top: 120px; right: 15px;  }
+ #strip .nav a, #wrapper #top .nav a { 
+display: inline-block;  border: 1px solid black; padding: 3px 3px 3px 3px; 
+text-decoration: none; 
+border: 1px solid black;
+background-color: rgba(255,255,255,0.5);
+border-radius: 5px;
+}
+#wrapper #top .nav a {
+border-width: 4px 4px 4px 4px;
+-o-border-image: url('images/nav-border.png') 4 4 4 4 stretch;
+-moz-border-image: url('images/nav-border.png') 4 4 4 4 stretch;
+-webkit-border-image: url('images/nav-border.png') 4 4 4 4 stretch;
+border-image: url('images/nav-border.png') 4 4 4 4 stretch;
+background-image: url('images/menu.png');
+background-position: -15px -15px;
+opacity: 0.95;
+color: white;
+text-shadow: 0px 0px 3px #333333;
+}
+ #strip .nav a:hover, #wrapper #top .nav a:hover { background-color: #ffffff; background-position: -15px -105px;
+opacity:1; }
+h1 a { color: white; opacity: 0.9; }
+ h1 { font-size: 80px;
+font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+font-weight:bold;
+text-transform: uppercase;
+text-shadow: 0px 0px 10px black;
+position: absolute;
+margin: 0;
+top: 0px;
+left: 30px;
+padding-left: 130px;
+background-image: url('images/sowka-logo.png');
+background-position: bottom left;
+background-repeat: no-repeat;
+ text-align: left;
+  display: inline-block;
+height: 200px;
+padding-bottom: 0px;
+padding-top: 0px;
+ }
+
+ .permalink { font-size: 70%; }
+ #strip img { max-width:100%; }
+ .likeme {
+/*padding: 10px 10px 10px 10px; */
+border: 1px solid white;
+border-radius: 10px;
+border-width: 9px 12px 11px 44px;
+-moz-border-image: url('images/borders.png') 9 12 11 44 repeat stretch;
+-webkit-border-image: url('images/borders.png') 9 12 11 44 repeat stretch;
+-o-border-image: url('images/borders.png') 9 12 11 44 repeat round;
+border-image: url('images/borders.png') 9 12 11 44 repeat stretch;
+background-image: url('images/sowkanafb.png');
+background-position: bottom right;
+background-repeat: no-repeat;
+min-height: 66px;
+height: 66px;
+max-height: 66px;
+padding-top: 2px;
+}
+#logo .like {
+position: absolute;
+right: 0px;
+top: 0px;
+  }
+/*.likeme iframe {
+  opacity: 0.8;
+}
+.likeme:hover iframe {
+  opacity: 1;
+}*/
+#footer {
+background-image: url('images/footer.png');
+width: 270px;
+height: 69px;
+margin-left: auto;
+margin-right: auto;
+padding-top: 21px;
+font-size: 12px;
+padding-left: 15px;
+padding-right: 15px;
+}
+#wrapper #top {
+text-align: center;
+padding-top: 0px;
+height: 80px;
+margin-top: -84px;
+margin-bottom: 4px;
+}
+#wrapper #top h2 {
+padding-top: 20px;
+margin: 0;
+}
+#wrapper #top h2, #wrapper #top p {
+color: white;  
+text-shadow: 0px 0px 4px black;
+font-weight: bold;
+font-family: "DejaVu Sans", "Helvetica", Sans;
+}
+#wrapper #top p.nav {
+text-shadow: none;
+margin-top: 8px;
+}
+#wrapper #top h2.main {
+padding-top: 0px;
+}
+#nav a{
+width: 150px;
+height: 53px;
+background-image: url('images/menu.png');
+margin-left: 10px;
+margin-bottom: 30px;
+display:inline-block;
+text-decoration: none;
+color: white;
+padding-top: 18px;
+font-size: 20px;
+text-shadow: 1px 1px 2px black;
+font-family: "DejaVu Sans Condensed", "DejaVu Sans", "Helvetica", Sans;
+font-weight: bold;
+}
+#nav a:hover {
+background-position: 0px -90px;
+}
+#nav { opacity: 0.9; }
+#footer a {
+font-style: italic;
+text-decoration: none;
+}
+#footer a:hover {
+background-color: rgba(255, 255, 255, 0.3);
+}
+#footer p {
+margin: 0;
+}

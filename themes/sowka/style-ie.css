@@ -1,0 +1,37 @@
+#devwarning {
+        font-size: 18px;
+        padding-top: 10px;
+        height:auto;
+	padding-bottom: 10px;;
+        position: fixed;
+        width: 100%;
+        left: 0px;
+        top: 0px;    
+        z-index: 666;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+body {
+	padding-top: 50px;
+}
+#wrapper {
+	border-width:95px 60px 110px;
+}
+.likeme {
+	border: 1px solid white;
+	padding: 10px 20px;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+.like a {
+	right: 24px;
+}
+#content {
+	margin-left: -4px;
+	margin-right: -4px;
+}
+#nav {
+	top:116px;
+}
+h1 {
+	left:50px;
+	padding-left:110px;
+}
