@@ -1,9 +1,24 @@
 <?
 function theme_navigation($comic) {
 global $comic;
-return "<p class=\"nav\"><a href=\"/". $comic['nav']['first'] ."/\">&lt;&lt;</a> <a href=\"/". $comic['nav']['prev'] ."/\">&lt;</a> <a href=\"/". $comic['nav']['random'] ."/\">Wylosuj</a> <a href=\"/". $comic['nav']['next'] ."/\">&gt;</a> <a href=\"/\">&gt;&gt;</a> </p>";
+$nav  = "<p class=\"nav\">";
+if ($comic['nav']['first']==$comic['id']) {
+	$klasa="class=\"disabled\"";
 }
-$_SOWKA['top']="<h2 class=\"main\">".$comic['name']."</h2>".theme_navigation($comic);
+else { $klasa=''; }
+$nav .= "<a title=\"Pierwszy pasek\" $klasa href=\"/". $comic['nav']['first'] ."/\">&lt;&lt;</a> ";
+$nav .= "<a title=\"Poprzedni pasek\" $klasa href=\"/". $comic['nav']['prev'] ."/\">&lt;</a> ";
+$nav .= "<a title=\"Losowy pasek\" href=\"/". $comic['nav']['random'] ."/\">Wylosuj</a> ";
+if ($comic['nav']['next']==$comic['id']) {
+        $klasa="class=\"disabled\"";
+}
+else { $klasa=''; }
+$nav .= "<a title=\"Następny pasek\" $klasa href=\"/". $comic['nav']['next'] ."/\">&gt;</a> ";
+$nav .= "<a title=\"Najnowszy pasek\" $klasa href=\"/\">&gt;&gt;</a>";
+$nav .= "</p>";
+return $nav;
+}
+$_SOWKA['top']="<h2 class=\"main comic\">".$comic['name']."</h2>".theme_navigation($comic);
 
 include('header.php');
 
@@ -16,7 +31,7 @@ $height = $_THEME['width'] / ($size[0]/$size[1]);
  ?>
 <a href="/<?= $comic['src'] ?>"><img src="/thumbnail/<?= $_THEME['width'] ?>/<?= $comic['src'] ?>" title="<?= $comic['title'] ?>" width="<?= $_THEME['width'] ?>" height="<?= $height ?>" /></a>
   <? } else {?>
-<img src="/<?= $comic['src'] ?>" title="<?= $comic['title'] ?>" <?= $size[3] ?>/>
+<img src="/<?= $comic['src'] ?>" alt="Komiks" title="<?= $comic['title'] ?>" <?= $size[3] ?>/>
 <? } ?>
 <p><?= $comic['comment'] ?></p>
 <div class="share">
@@ -38,6 +53,7 @@ URL: <?= $_CONFIG['siteurl'] ?><?= $comic['src'] ?></p>
 
 <div id="comments">
 <h4>Komentarze</h4>
-<?= $page_comments ?></div>
+<?= $page_comments ?>
+</div>
 
 <?include('footer.php');?>

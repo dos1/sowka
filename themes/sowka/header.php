@@ -1,5 +1,5 @@
 <?
-$_THEME['width'] = 800;
+$_THEME['width'] = 786;
 $facebook_enable = true;
 ?>
 <? /*echo '<?xml version="1.0" encoding="utf-8"?>';

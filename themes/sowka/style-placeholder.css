@@ -30,3 +30,6 @@
         font-family:"DejaVu Sans Condensed", "DejaVu Sans", "Helvetica", Sans;
         font-weight:bold;
 }
+h1 {
+	padding-left: 140px;
+}

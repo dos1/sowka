@@ -1,5 +1,12 @@
 <?
-$_SOWKA['top']="<h2 class=\"main\">".$blog['name']."</h2><p>".$blog['date']."</p>";
+setlocale(LC_ALL, 'pl_PL');
+$_SOWKA['top']="<h2 class=\"main\">".$blog['name']."</h2><p class=\"p2rd\">".strftime("%d %B %Y, %H:%M:%S", strtotime($blog['date']))."</p>";
+if ($blog['nav']['prev']) {
+$_SOWKA['top'].="<a href=\"/blog/".$blog['nav']['prev']['id']."/\" class=\"link-prev\">&lt; ". $blog['nav']['prev']['name']."</a>";
+}
+if ($blog['nav']['next']) {
+$_SOWKA['top'].="<a href=\"/blog/".$blog['nav']['next']['id']."/\" class=\"link-next\">". $blog['nav']['next']['name']." &gt;</a>";
+}
 include('header.php');?>
 <div id="blog">
 <div class="author">
