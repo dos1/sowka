@@ -2,6 +2,7 @@ conf
 images/*.png
 images/*.jpg
 images/*.gif
+images/avatars
 favicon.*
 thumbnails/*
 !thumbnails/index.html
