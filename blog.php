@@ -19,6 +19,9 @@ $blog['nav']['prev'] = $id;
 $id = mysql_fetch_array(mysql_query("SELECT * FROM blog WHERE id > ".$blog['id']." ORDER BY id ASC LIMIT 1"));
 $blog['nav']['next'] = $id;
 
+$id = mysql_fetch_array(mysql_query("SELECT * FROM actors WHERE id = ".$blog['author']." LIMIT 1"));
+$blog['author'] = $id;
+
 include_once('themes/'.$_CONFIG['theme'].'/functions/comments.php');
 
 $comments = array(

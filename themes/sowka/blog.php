@@ -10,11 +10,11 @@ $_SOWKA['top'].="<a href=\"/blog/".$blog['nav']['next']['id']."/\" class=\"link-
 include('header.php');?>
 <div id="blog">
 <div class="author">
-  <img src="http://fbcdn-profile-a.akamaihd.net/hprofile-ak-snc4/195648_1799748123_6359960_q.jpg" />
+  <img src="/images/avatars/<?=$blog['author']['avatar']?>" />
   <div>
-    <span id="blog-author-con">Autorem tego wpisu jest:</span>
-    <span id="blog-author-name">Sebastian Krzyszkowiak</span>
-    <span id="blog-author-role">Administrator strony</span>
+    <span id="blog-author-con"><? if ($blog['author']['male']) { print 'Autorem'; } else { print 'Autorką'; } ?> tego wpisu jest:</span>
+    <span id="blog-author-name"><?=$blog['author']['name']?></span>
+    <span id="blog-author-role"><?=$blog['author']['title']?></span>
   </div>
 </div>
 <p><?= $blog['content'] ?></p>
