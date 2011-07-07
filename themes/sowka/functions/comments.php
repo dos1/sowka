@@ -35,7 +35,11 @@ $form .= '</textarea>';
 $form .= '  </form>';
 $form .= '  <div class="login">Zaloguj się przy pomocy:</div>';
 //$form .= '  <p><a>Facebook</a> <a>Google Accounts</a> <a>OpenID</a> <a href="'.$return_url.'/login/">Sówka</a></p>';
-$form .= ' <p><fb:login-button onlogin="location.hash = \'write-comment\'; window.location.reload(true);">Facebook</fb:login-button></p> ';
+$form .= ' <p><fb:login-button class="login-facebook" perms="email" onlogin="location.hash = \'write-comment\'; window.location.reload(true);">Facebook</fb:login-button>';
+$form .= ' <a href="'.$return_url.'/login/google/" class="login-google">Konto Google</a>';
+$form .= ' <a href="'.$return_url.'/login/openid/" class="login-openid">OpenID</a>';
+$form .= ' <a href="'.$return_url.'/login/" class="login-sowka">Sówka</a>';
+$form .= ' </p> ';
 $form .= '</div>';
 return $form;
 }

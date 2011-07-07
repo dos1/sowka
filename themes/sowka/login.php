@@ -9,7 +9,7 @@ if ($_USER) {
 }
 else {
 ?>
-<p><fb:login-button onlogin="window.location.reload(true);">Zaloguj przez Facebooka</fb:login-button></p>
+<p><fb:login-button perms="email" onlogin="window.location.reload(true);">Zaloguj przez Facebooka</fb:login-button></p>
 <? } ?>
 </div>
 <?include('footer.php');?>

@@ -60,6 +60,10 @@ if ($cookie) {
       mysql_query("UPDATE `users` SET `nickname`='".mysql_real_escape_string($me['name'])." ".mysql_real_escape_string($me['surname'])."' WHERE `facebook`='".mysql_real_escape_string($me['id'])."';");
     }
 
+    if (($_USER['mail']=='') && (isset($me['email']))) {
+      mysql_query("UPDATE `users` SET `mail`='".mysql_real_escape_string($me['email'])."' WHERE `facebook`='".mysql_real_escape_string($me['id'])."';");
+    }
+
   }
   catch (Exception $e) {
     //print $e->getMessage();
