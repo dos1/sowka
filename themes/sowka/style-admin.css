@@ -1,0 +1,11 @@
+h1 {
+  background-image: url('images/sowka-admin.png');
+  background-position: 0px 20px;
+}
+h1 a:hover {
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+}
