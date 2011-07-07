@@ -1,5 +1,5 @@
 function blinkEyes() {
-  document.getElementById('header-sowka-logo').style.backgroundPosition='0px -200px';
+  document.getElementById('header-sowka-logo').style.backgroundPosition='0px -220px';
   setTimeout("unblinkEyes()", 200);
   initBlinking();
 }

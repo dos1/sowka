@@ -1,24 +1,26 @@
 Options FollowSymLinks
 RewriteEngine On
 
-RewriteRule ^([0-9]*)/?$ comic.php?id=$1 [L]
+RewriteRule ^([0-9]+)/?$ comic.php?id=$1 [L]
 RewriteRule ^blog/?$ blog.php [L]
-RewriteRule ^blog/([0-9]*)/?$ blog.php?id=$1 [L]
+RewriteRule ^blog/([0-9]+)/?$ blog.php?id=$1 [L]
 RewriteRule ^about/?$ about.php [L]
+RewriteRule ^profile/?$ profile.php [L]
 RewriteRule ^login/?$ login.php [L]
 RewriteRule ^register/?$ register.php [L]
-RewriteRule ^([0-9]*)/login/?$ login.php?comic=$1 [L]
-RewriteRule ^([0-9]*)/register/?$ register.php?comic=$1 [L]
-RewriteRule ^blog/([0-9]*)/login/?$ login.php?blog=$1 [L]
-RewriteRule ^blog/([0-9]*)/register/?$ register.php?blog=$1 [L]
+RewriteRule ^([0-9]+)/login/?$ login.php?comic=$1 [L]
+RewriteRule ^([0-9]+)/register/?$ register.php?comic=$1 [L]
+RewriteRule ^blog/([0-9]+)/login/?$ login.php?blog=$1 [L]
+RewriteRule ^blog/([0-9]+)/register/?$ register.php?blog=$1 [L]
 RewriteRule ^licence/?$ licence.php [L]
 RewriteRule ^archive/?$ archive.php [L]
+RewriteRule ^archive/([0-9]+)/?$ archive.php?actor=$1 [L]
 
-RewriteRule ^thumbnail/([0-9]*)/(.*)$ thumb.php?width=$1&file=$2 [L]
+RewriteRule ^thumbnail/([0-9]+)/(.+)$ thumb.php?width=$1&file=$2 [L]
 
-#RewriteRule ^blog/[0-9]*/(.*)$ $1 [L]
-#RewriteRule ^blog/(.*)$ $1 [L]
-#RewriteRule ^[0-9]*/(.*)$ $1 [L]
+#RewriteRule ^blog/[0-9]+/(.+)$ $1 [L]
+#RewriteRule ^blog/(.+)$ $1 [L]
+#RewriteRule ^[0-9]+/(.+)$ $1 [L]
 
 ErrorDocument 404 /404.php
 
@@ -34,4 +36,4 @@ ExpiresByType text/css A900
 ExpiresByType font/ttf A6048000
 AddOutputFilterByType DEFLATE font/ttf
 
-#ExpiresByType text/css A0
+ExpiresByType text/css A0

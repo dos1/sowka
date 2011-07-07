@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light&text=RSOPWILTKA%C3%93&v2);
 @font-face {
 	font-family: "DejaVu Sans";
 	src: local("DejaVu Sans"), url('fonts/DejaVuSans.ttf');
@@ -7,18 +8,14 @@
 	font-weight: bold;
 	src: local("DejaVu Sans Bold"), url('fonts/DejaVuSans-Bold.ttf');
 }
-@font-face {
+/*@font-face {
 	font-family: "DejaVu Sans Condensed";
 	src: local("DejaVu Sans Condensed"), url('fonts/DejaVuSansCondensed.ttf');
-}
+}*/
 @font-face {
 	font-family: "DejaVu Sans Condensed";
 	font-weight: bold;
 	src: local("DejaVu Sans Condensed Bold"), url('fonts/DejaVuSansCondensed-Bold.ttf');
-}
-@font-face {
-	font-family: "Comic Sans MS";
-	src: local("Comic Sans MS"), url('fonts/Comic_Sans_MS.ttf');
 }
 body
 {
@@ -85,7 +82,9 @@ h1,h2,.share,#strip,#about,#login,#archive,#footer,#error,#blog .nav
 {
 	text-align:center;
 }
-
+#archive {
+	padding-top: 10px;
+}
 #content
 {
 	background-color:rgba(255, 255, 255, 0.5);
@@ -209,21 +208,21 @@ h1 a
 }
 
 h1 {
-	font-size:80px;
-	font-family:"Comic Sans MS", "Comic Sans", cursive, sans-serif;
+	font-size:100px;
+	font-family: "Shadows Into Light", "Comic Sans MS", "Comic Sans", cursive, sans-serif;
 	font-weight:bold;
 	text-transform:uppercase;
 	text-shadow:0 0 10px black;
 	position:absolute;
-	top:0px;
+	top:-20px;
 	left:30px;
-	padding-left:110px;
+	padding-left:130px;
 	background-image:url('images/sowka-logo.png');
-	background-position:top left;
+	background-position: top left;
 	background-repeat:no-repeat;
 	text-align:left;
 	display:inline-block;
-	height:200px;
+	height:220px;
 	padding-bottom:0;
 	padding-top:0;
 	margin:0;
@@ -461,7 +460,6 @@ h1 a:hover {
 {
         margin:5px;
         padding:0 10px 10px;
-	margin-bottom: -20px;
 }
 #comments h4 {
 	margin: 30px;
@@ -552,6 +550,12 @@ h1 a:hover {
 	top: 0px;
 	z-index: 69;
 }
+#comments .comment .comment-user .comment-user-admin a {
+	border-bottom: 1px dashed black;
+}
+#comments .comment .comment-user .comment-user-admin a:hover {
+        border-top: 1px dashed black;
+}
 #comments .comment .comment-user .comment-user-info a:hover {
 	max-width: none;
 	overflow: visible;
@@ -631,7 +635,7 @@ h1 a:hover {
 #archive h3:first-letter {
 	text-transform: uppercase;
 }
-#archive .month:nth-of-type(odd) {
+#archive .month:nth-of-type(even) {
 	background-color: rgba(255,255,255,0.3);
 	border-radius: 10px;
 }
@@ -710,9 +714,9 @@ input:required, textarea:required {
 #comments #write-comment p a {
 	display: inline-block:
 	padding: 5px;
-	border: 1px solid black;
+	/*border: 1px solid black;
 	background-color: rgba(255,255,255,0.5);
-	border-radius: 5px;
+	border-radius: 5px;*/
 }
 /*#comments .write-comment-user {
 	background-image: url('images/sowka-footer.png');
@@ -738,4 +742,84 @@ input:required, textarea:required {
   -o-transform: rotate(3deg);
   -ms-transform: rotate(3deg);
   transform: rotate(3deg);
+}
+div#actors {
+  position: absolute;
+  right: 25px;
+  margin-top: 10px;
+  background-color: rgba(255,255,255,0.5);
+  text-align: left;
+  border-radius: 10px;
+  opacity: 0.6;
+  overflow: hidden;
+        -moz-transition: all 0.3s;
+        -webkit-transition: opacity 0.3s;
+        -o-transition: opacity 0.3s;
+        -ms-transition: opacity 0.3s;
+        transition: all 0.3s;
+}
+div#actors p {
+  text-align: center;
+  margin: 0px;
+  padding: 5px;
+}
+div#actors:hover p:after {
+  content: ":";
+}
+a.actor {
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px;
+}
+#archive a.actor {
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: left;
+  min-width: 160px;
+}
+#archive a.actor:hover {
+  background-color: rgba(255,255,255,0.7);
+}
+#archive a.selected {
+  background-color: rgba(255,255,255,0.7);
+  border: 1px solid black;
+}
+div#actors a.actor {
+  display: none;
+}
+a.actor img {
+  vertical-align: middle;
+  border: 2px solid black;
+  margin-right: 5px;
+}
+div#actors:hover {
+  opacity: 1;
+}
+div#actors:hover a.actor {
+  display: block;
+}
+a.actor:hover {
+  background-color: white;
+}
+#archive .bydate span, #archive .byactor a, #archive .bydate a, #archive .byactor span {
+  display: inline-block;
+  width: 45%;
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+#archive .bydate span, #archive .byactor span {
+  opacity: 0.5;
+  font-weight: bold;
+}
+#archive .bydate a:hover, #archive .byactor a:hover {
+  background-color: rgba(255,255,255,0.5);
+}
+#archive .bydate span, #archive .byactor a {
+  text-align: left;
+}
+#archive .bydate a, #archive .byactor span {
+  text-align: right;
 }

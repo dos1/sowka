@@ -4,3 +4,6 @@ url = git://github.com/mysz/blipapi-php.git
 [submodule "facebook"]
 path = includes/facebook
 url = git://github.com/facebook/php-sdk.git
+[submodule "lightopenid"]
+path = includes/lightopenid
+url = https://git.gitorious.org/lightopenid/lightopenid.git

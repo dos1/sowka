@@ -33,7 +33,22 @@ $height = $_THEME['width'] / ($size[0]/$size[1]);
   <? } else {?>
 <img src="/<?= $comic['src'] ?>" alt="Komiks" title="<?= $comic['title'] ?>" <?= $size[3] ?>/>
 <? } ?>
+
+<div id="actors">
+<p>Wystąpili</p>
+<?
+foreach ($comic['actors'] as $actor) {
+?>
+<a href="/archive/<?=$actor['id']?>/" class="actor">
+<img width="50" height="50" src="/images/avatars/<?=$actor['avatar']?>"/>
+<?=$actor['name'];?></a>
+<?
+}
+?>
+</div>
+
 <p><?= $comic['comment'] ?></p>
+
 <div class="share">
 <?
 $facebook_enable = true;
