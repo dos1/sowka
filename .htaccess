@@ -12,7 +12,7 @@ RewriteRule ^([0-9]+)/login/?$ login.php?comic=$1 [L]
 RewriteRule ^([0-9]+)/register/?$ register.php?comic=$1 [L]
 RewriteRule ^blog/([0-9]+)/login/?$ login.php?blog=$1 [L]
 RewriteRule ^blog/([0-9]+)/register/?$ register.php?blog=$1 [L]
-RewriteRule ^licence/?$ licence.php [L]
+RewriteRule ^license/?$ license.php [L]
 RewriteRule ^archive/?$ archive.php [L]
 RewriteRule ^archive/([0-9]+)/?$ archive.php?actor=$1 [L]
 
