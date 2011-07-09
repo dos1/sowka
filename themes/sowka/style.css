@@ -626,6 +626,11 @@ h1 a:hover {
 	margin-top: 0;
 	margin-bottom: -26px;
 }
+#archive .desc {
+	margin: 30px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
 #archive div:nth-of-type(1) {
 	margin-top: -20px;
 }
@@ -752,6 +757,7 @@ div#actors {
   border-radius: 10px;
   opacity: 0.6;
   overflow: hidden;
+  z-index: 2;
         -moz-transition: all 0.3s;
         -webkit-transition: opacity 0.3s;
         -o-transition: opacity 0.3s;
@@ -774,8 +780,7 @@ a.actor {
 #archive a.actor {
   background-color: rgba(255,255,255,0.3);
   border-radius: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin: 5px;
   text-align: left;
   min-width: 160px;
 }
@@ -785,6 +790,7 @@ a.actor {
 #archive a.selected {
   background-color: rgba(255,255,255,0.7);
   border: 1px solid black;
+  padding: 4px;
 }
 div#actors a.actor {
   display: none;
@@ -874,7 +880,12 @@ li { text-align: left; }
 #profile form {
 	margin-left: auto;
 	margin-right: auto;
-	width: 50%;
+	width: 460px;
+        background-color: rgba(255,255,255,0.4);
+        padding: 20px;
+        border-radius: 10px;
+	margin-top: 40px;
+	padding-top: 5px;
 }
 #profile form td {
 	text-align: right;
@@ -882,12 +893,70 @@ li { text-align: left; }
 #profile form td input, #profile form td textarea {
 	width: 100%;
 }
+#profile form td textarea {
+	max-width: 300px;
+	min-width: 100%;
+}
 #profile form td.info {
 	text-align: center;
 	font-size: 12px;
 	padding-top:10px;
 	padding-bottom: 10px;
 }
-#profile form input[type=submit] {
-	width: 100px;
+#profile form td.info input {
+	width: 90px;
+}
+#profile .userinfo {
+	background-color: rgba(255,255,255,0.5);
+	display: inline-block;
+	padding: 10px;
+	border-radius: 10px;
+}
+#profile .userinfo img {
+	margin-right: 5px;
+}
+#profile .userinfo div {
+	display: inline-block;
+	text-align: left;
+}
+#profile .userinfo p {
+	margin: 5px;
+}
+#profile p.nickname {
+	font-weight: bold;
+}
+#profile p.fullname {
+	font-style: italic;
+}
+#profile p.admin {
+	font-weight: bold;
+}
+#profile p.comment_count {
+	font-size: 0.8em;
+}
+#profile p.about {
+	border-top: 1px solid #444444;
+	padding: 10px;
+	margin-bottom: 0;
+	margin-left: 150px;
+	margin-right: 150px;
+}
+#profile p.link a {
+	display: block;
+	max-width: 400px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+#profile form td.login {
+	font-weight: bold;
+	text-align: left;
+	padding-left: 5px;
+}
+#profile ul {
+	padding: 15px;
+        padding-left: 30px;
+	background-color: rgba(255,255,255,0.3);
+	border-radius:10px;
+	margin: 0;
 }

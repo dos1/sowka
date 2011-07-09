@@ -24,9 +24,13 @@ $profile['fullname']=$user['name'].' '.$user['surname'];
 //$profile['www']=$user['link'];
 //$profile['mail']=$user['mail'];
 
+$profile['services']['Facebook']=0;
+$profile['services']['Konta Google']=0;
+$profile['services']['OpenID']=0;
+
 //if ($user['login-active']) $profile['services'][]='Sówka';
-if (isset($user['facebook'])) $profile['services'][]='Facebook';
-if (isset($user['google'])) $profile['services'][]='Konta Google';
-if (isset($user['openid'])) $profile['services'][]='OpenID';
+if (isset($user['facebook'])) $profile['services']['Facebook']=1;
+if (isset($user['google'])) $profile['services']['Konta Google']=1;
+if (isset($user['openid'])) $profile['services']['OpenID']=1;
 
 include_once('themes/'.$_CONFIG['theme'].'/profile.php');
