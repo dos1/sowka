@@ -1,4 +1,5 @@
 <?
+session_start();
 require('conf/config.php');
 $baza = mysql_connect ($_CONFIG['mysql_host'], $_CONFIG['mysql_user'], $_CONFIG['mysql_pass']) or die('Nie można połączyć się z bazą danych ponieważ: ' . mysql_error());
 
@@ -25,6 +26,11 @@ function get_facebook_cookie($app_id, $app_secret) {
   return $args;
 }
 
+//print "LOL: ".$_SESSION['user_id'];
+if (isset($_SESSION['user_id'])) {
+  $_USER = mysql_fetch_assoc(mysql_query("SELECT * FROM users WHERE id=".$_SESSION['user_id']));
+}
+
 $cookie = get_facebook_cookie($_CONFIG['fb']['appid'], $_CONFIG['fb']['secret']);
 
 $facebook = new Facebook(array(
@@ -32,7 +38,7 @@ $facebook = new Facebook(array(
   'secret' => $_CONFIG['fb']['secret']
 ));
 
-if ($cookie) {
+if (($cookie) && (!(isset($_USER)))) {
   try {
     $facebook->setAccessToken($cookie['access_token']);
     $me = $facebook->api('/me');
@@ -44,24 +50,33 @@ if ($cookie) {
 
     $_USER = mysql_fetch_assoc(mysql_query("SELECT * FROM `users` WHERE `facebook`='".mysql_real_escape_string($me['id'])."';"));
 
+    $_USER['logged_in_by_fb']=1;
+
     if (($_USER['link']=='') && (isset($me['link']))) {
       mysql_query("UPDATE `users` SET `link`='".mysql_real_escape_string($me['link'])."' WHERE `facebook`='".mysql_real_escape_string($me['id'])."';");
+      $_USER['link']=$me['link'];
     }
 
     if (($_USER['login']=='') && (isset($me['username']))) {
       mysql_query("UPDATE `users` SET `login`='".mysql_real_escape_string($me['username'])."' WHERE `facebook`='".mysql_real_escape_string($me['id'])."';");
+      $_USER['login']=$me['username'];
     }
 
     if (($_USER['login']=='') && (!(isset($me['username'])))) {
-      mysql_query("UPDATE `users` SET `login`='".mysql_real_escape_string($me['name'])." ".mysql_real_escape_string($me['surname'])."' WHERE `facebook`='".mysql_real_escape_string($me['id'])."';");
+      mysql_query("UPDATE `users` SET `login`='".mysql_real_escape_string($me['name'])." ".mysql_real_escape_string($me['surname']).
+                  "' WHERE `facebook`='".mysql_real_escape_string($me['id'])."';");
+      $_USER['login']=$me['name'].' '.$me['surname'];
     }
 
     if ($_USER['nickname']=='') {
-      mysql_query("UPDATE `users` SET `nickname`='".mysql_real_escape_string($me['name'])." ".mysql_real_escape_string($me['surname'])."' WHERE `facebook`='".mysql_real_escape_string($me['id'])."';");
+      mysql_query("UPDATE `users` SET `nickname`='".mysql_real_escape_string($me['name'])." ".mysql_real_escape_string($me['surname']).
+                  "' WHERE `facebook`='".mysql_real_escape_string($me['id'])."';");
+      $_USER['nickname']=$me['name'].' '.$me['surname'];
     }
 
     if (($_USER['mail']=='') && (isset($me['email']))) {
       mysql_query("UPDATE `users` SET `mail`='".mysql_real_escape_string($me['email'])."' WHERE `facebook`='".mysql_real_escape_string($me['id'])."';");
+      $_USER['mail']=$me['email'];
     }
 
   }
@@ -74,12 +89,25 @@ function get_user($id) {
   return mysql_fetch_assoc(mysql_query("SELECT * FROM `users` WHERE id=".$id));
 }
 
+function get_user_link($user) {
+  global $_CONFIG;
+  if (!$user['link']) return $_CONFIG['siteurl'].'profile/'.$user['id'].'/';
+  else return $user['link'];
+}
+
 function get_user_avatar($_USER) {
+  global $_CONFIG;
   if ($_USER['avatar']!='') {
     $_USER['avatar']='/images/avatars/'.$_USER['avatar'];
   }
   elseif ($_USER['facebook']!='') {
     $_USER['avatar']='http://graph.facebook.com/'.$_USER['facebook'].'/picture';
+  }
+  elseif ($_USER['mail']!='') {
+    $_USER['avatar']='http://www.gravatar.com/avatar/'.md5(strtolower(trim($_USER['mail']))).'?rating=g&size=50&default='.urlencode($_CONFIG['siteurl'].'themes/'.$_CONFIG['theme'].'/images/avatar-default.png');
+  }
+  else {
+    $_USER['avatar']='/themes/'.$_CONFIG['theme'].'/images/avatar-default.png';
   }
   return $_USER['avatar'];
 }

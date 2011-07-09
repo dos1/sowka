@@ -52,7 +52,9 @@ $q = mysql_query("SELECT comments.id as id, nickname, users.id as uid, link, dat
                   $comic['id']." AND visible=1 AND deleted=0 AND blog=0 ORDER BY id") or print mysql_error();
 
 while ($comment = mysql_fetch_array($q)) {
-  $comment[2] = get_user_avatar(get_user($comment[2]));
+  $user = get_user($comment[2]);
+  $comment[3] = get_user_link($user);
+  $comment[2] = get_user_avatar($user);
   $page_comments.=theme_comment($comment[0], htmlspecialchars($comment[1]), $comment[2], htmlspecialchars($comment[3]), $comment[4], htmlspecialchars($comment[5]), $comment[6]);
 }
 
