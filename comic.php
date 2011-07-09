@@ -39,23 +39,12 @@ if ((isset($_POST['comment'])) && (isset($_USER))) {
               ", content='".mysql_real_escape_string($_POST['comment'])."', date=NOW(), visible=1, deleted=0") or print mysql_error();
 }
 
-/*$comments = array(
-              array(1, 'dos', 'http://dosowisko.net/', 168956789, 'Komci póki co ni ma.'),
-              array(2, 'dosia', 'http://dosia.dosowisko.net/', 5456789678, 'Jak nie ma, jak są?'),
-              array(3, 'Kasia Nałęcka', 'http://kasia.dosowisko.net/', 5456799678, 'Nekrofilka się znalazła, spójrz na datę!'),
-              array(10, 'Bardzo baaardzo bardzo hmm ciekawe jak bardzo, bardzo ale to bardzo długi nick. O, taki długi!', 'http://dosowisko.net/', 168956789, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio augue, consectetur in posuere eget, tempor quis nisl. Aliquam quis odio nulla. Proin ultrices libero a dui feugiat faucibus. Morbi tempor nunc eget nulla mollis tristique. Quisque fringilla dignissim mollis. Aenean pretium bibendum aliquet. Morbi venenatis magna id nisi varius posuere gravida sapien imperdiet. Cras congue, urna hendrerit rutrum varius, ipsum justo consectetur ipsum, nec convallis mi diam id leo. Phasellus eget quam nunc. Donec pharetra viverra mauris, ut pretium enim porta a. Sed iaculis blandit odio.'),
-              array(666, 'Ja', 'http://ja.dosowisko.net/', time(), 'To jest całkiem świeży komć.')
-            );
-*/
 $page_comments="";
-$q = mysql_query("SELECT comments.id as id, nickname, users.id as uid, link, date, content, users.admin FROM comments, users WHERE users.id=comments.uid AND aid=".
-                  $comic['id']." AND visible=1 AND deleted=0 AND blog=0 ORDER BY id") or print mysql_error();
+$q = mysql_query("SELECT * FROM comments WHERE aid=".$comic['id']." AND visible=1 AND deleted=0 AND blog=0 ORDER BY id") or print mysql_error();
 
 while ($comment = mysql_fetch_array($q)) {
-  $user = get_user($comment[2]);
-  $comment[3] = get_user_link($user);
-  $comment[2] = get_user_avatar($user);
-  $page_comments.=theme_comment($comment[0], htmlspecialchars($comment[1]), $comment[2], htmlspecialchars($comment[3]), $comment[4], htmlspecialchars($comment[5]), $comment[6]);
+  $user = get_user($comment['uid']);
+  $page_comments.=theme_comment($comment,$user);
 }
 
 if (isset($_USER)) {

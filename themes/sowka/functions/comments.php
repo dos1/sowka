@@ -1,12 +1,21 @@
 <?
-function theme_comment($id, $nick, $avatar, $url, $date, $content, $admin=0) {
+//function theme_comment($id, $nick, $avatar, $url, $date, $content, $admin=0) {
+function theme_comment($comment, $user) {
   setlocale(LC_ALL, 'pl_PL');
-  if ($admin) { $admin='comment-user-admin'; $admintitle='title="Administrator"'; }
+  $deleted = "<i>-usunięty-</i>";
+  if (!$user) { $user['nickname']=$deleted; } else { $user['nickname']=htmlspecialchars($user['nickname']); }
+  if ($user['admin']) { $admin='comment-user-admin'; $admintitle='title="Administrator"'; }
   $komcie = "<div class=\"comment write-comment-quest\">";
-  $komcie .= "<div class=\"comment-user\"><a href=\"$url\"><img alt=\"Avatar\" src=\"".$avatar."\" /></a>";
-  $komcie .= "<div class=\"comment-user-info $admin\"><a href=\"$url\" $admintitle>$nick</a>";
-  $komcie .= "<div>".strftime("%d %B %Y", strtotime($date))."</div><div>".date("H:i:s",strtotime($date))."</div></div></div>";
-  $komcie .= "<p>$content</p>";
+  $komcie .= "<div class=\"comment-user\">";
+  if ($user['nickname']!=$deleted) $komcie .= "<a href=\"/profile/".$user['id']."/\">"; else $komcie .= "<a>";
+  $komcie .= "<img alt=\"Avatar\" src=\"".htmlspecialchars(get_user_avatar($user))."\" />";
+  $komcie .= "</a>";
+  $komcie .= "<div class=\"comment-user-info $admin\">";
+  if ($user['nickname']!=$deleted) $komcie .= "<a href=\"".htmlspecialchars(get_user_link($user))."\" $admintitle>"; else $komcie .= "<a>";
+  $komcie .= $user['nickname'];
+  $komcie .= "</a>";
+  $komcie .= "<div>".strftime("%d %B %Y", strtotime($comment['date']))."</div><div>".date("H:i:s",strtotime($comment['date']))."</div></div></div>";
+  $komcie .= "<p>".htmlspecialchars($comment['content'])."</p>";
   $komcie .= "</div>";
   return $komcie;
 }

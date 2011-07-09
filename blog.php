@@ -29,17 +29,12 @@ if ((isset($_POST['comment'])) && (isset($_USER))) {
 
 include_once('themes/'.$_CONFIG['theme'].'/functions/comments.php');
 
-/*$comments = array(
-              array(1, 'Pokemon', 'http://pokemon.dosowisko.net/', 1268986789, 'Fajna nocia, wejdz na mojego blogaska :*'),
-            ); */
-
 $page_comments="";
-$q = mysql_query("SELECT comments.id as id, nickname, users.id as uid, link, date, content, users.admin FROM comments, users WHERE users.id=comments.uid AND aid=".
-                  $blog['id']." AND visible=1 AND deleted=0 AND blog=1 ORDER BY id") or print mysql_error();
+$q = mysql_query("SELECT * FROM comments WHERE aid=".$blog['id']." AND visible=1 AND deleted=0 AND blog=1 ORDER BY id") or print mysql_error();
 
 while ($comment = mysql_fetch_array($q)) {
-  $comment[2] = get_user_avatar(get_user($comment[2]));
-  $page_comments.=theme_comment($comment[0], htmlspecialchars($comment[1]), $comment[2], htmlspecialchars($comment[3]), $comment[4], htmlspecialchars($comment[5]), $comment[6]);
+  $user = get_user($comment['uid']);
+  $page_comments .= theme_comment($comment,$user);
 }
 
 if (isset($_USER)) {
