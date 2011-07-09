@@ -58,7 +58,7 @@ $plusone_enable = true;
 ?>
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a>
 <a title="Publikuj w usłudze Google Buzz" class="google-buzz-button" style="position: relative; top: -6px;" href="http://www.google.com/buzz/post" data-button-style="small-button" data-locale="pl"></a>
-<g:plusone size="medium" style="position: relative; top: -6px;" count="false"></g:plusone>
+<g:plusone size="medium" style="position: relative; top: -6px;" count="false" href="<?= $_CONFIG['siteurl'] ?><?= $comic['id'] ?>/"></g:plusone>
 <fb:like style="position: relative; top: -4px;" layout="button_count" href="<?= $_CONFIG['siteurl'] ?><?= $comic['id'] ?>/"></fb:like>
 </div>
 <?= theme_navigation($comic) ?>
