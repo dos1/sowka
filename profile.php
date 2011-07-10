@@ -16,13 +16,7 @@ foreach ($user as $key => $val) {
 if (!$user) { include('404.php'); die(); }
 
 $profile['avatar']=get_user_avatar($user);
-//$profile['name']=$user['name'];
-//$profile['surname']=$user['surname'];
 $profile['fullname']=$user['name'].' '.$user['surname'];
-//$profile['nickname']=$user['nickname'];
-//$profile['email']=$user['email'];
-//$profile['www']=$user['link'];
-//$profile['mail']=$user['mail'];
 
 $profile['services']['Facebook']=0;
 $profile['services']['Konta Google']=0;

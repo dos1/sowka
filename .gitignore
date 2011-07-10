@@ -6,4 +6,4 @@ images/avatars
 favicon.*
 thumbnails/*
 !thumbnails/index.html
-!thubnails/.htaccess
+!thumbnails/.htaccess
