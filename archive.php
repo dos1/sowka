@@ -1,6 +1,8 @@
 <?
 include_once('includes/functions.php');
 
+$page_title='Archiwum';
+
 if (!isset($_GET['actor']) || (!(is_numeric($_GET['actor'])))) { $_GET['actor']=-1; }
 
 if ($_GET['actor']>0) {

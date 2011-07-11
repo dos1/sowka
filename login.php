@@ -1,6 +1,8 @@
 <?
 include_once('includes/functions.php');
 
+$page_title='Logowanie';
+
 if (isset($_GET['mode'])) {
   if (($_GET['mode']=='google') || ($_GET['mode']=='openid')) {
     include_once 'includes/lightopenid/openid.php';
