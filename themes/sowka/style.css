@@ -838,6 +838,7 @@ a.actor:hover {
 .login-google, .login-openid, .login-sowka {
 	display: inline-block;
 	text-indent: -9999px;
+	background-image: url('images/signin.png');
 	background-repeat: no-repeat;
 	width: 80px;
 	height: 23px;
@@ -845,20 +846,32 @@ a.actor:hover {
         outline: 0;
 }
 .login-google {
-        background-image: url('images/google_signin.png');
+	background-position: 0px 0px;
 }
 .login-openid {
-        background-image: url('images/openid_signin.png');
+	background-position: -80px 0px;
 }
 .login-sowka {
 	width: 75px;
-	background-image: url('images/sowka_signin.png');
+	background-position: -160px 0px;
 }
-.login-google:hover, .login-openid:hover, .login-sowka:hover {
+.login-google:hover {
 	background-position: 0px -24px;
 }
-.login-google:active, .login-openid:active, .login-sowka:active {
+.login-openid:hover {
+        background-position: -80px -24px;
+}
+.login-sowka:hover {
+        background-position: -160px -24px;
+}
+.login-google:active {
 	background-position: 0px -48px;
+}
+.login-openid:active {
+        background-position: -80px -48px;
+}
+.login-sowka:active {
+        background-position: -160px -48px;
 }
 ul { display: inline-block;}
 li { text-align: left; }
