@@ -19,15 +19,23 @@ if ($profile['me']) {
 ?>
 <form method="POST">
 <h3>Edycja danych</h3>
+<? if ($profile['error']) { ?>
+<p class="error"><?= $profile['error']?></p>
+<? }
+foreach ($profile['messages'] as $message) {
+  print "<p class=\"message\">".$message."</p>";
+}
+ ?>
 <table>
 <tr><td>Imię:</td><td><input type="text" name="name" value="<?= htmlspecialchars($profile['name']) ?>" /></td></tr>
 <tr><td>Nazwisko:</td><td><input type="text" name="surname" value="<?= htmlspecialchars($profile['surname']) ?>" /></td></tr>
 <tr><td>Nazwa wyświetlana:</td><td><input type="text" name="nickname" value="<?= htmlspecialchars($profile['nickname']) ?>" /></td></tr>
 <tr><td>Adres e-mail:</td><td><input type="email" name="mail" pattern="[^ @]*@[^ @]*" value="<?= htmlspecialchars($profile['mail']) ?>" /></td></tr>
+<tr><td>Adres WWW:</td><td><input type="url" name="link" value="<?= htmlspecialchars($profile['link']) ?>" /></td></tr>
 <tr><td>O mnie:</td><td><textarea name="about"><?= htmlspecialchars($profile['about']) ?></textarea></td></tr>
 <tr><td class="info" colspan="2"><input type="submit" value="Wyślij" /></td></tr>
 <? if (!$profile['login-active']) { ?>
-<tr><td class="info" colspan="2">Brak ustawionej nazwy użytkownika. Ustaw ją, wraz z hasłem, w polach poniżej, aby umożliwić logowanie bez użycia zewnętrznych serwisów.</td></tr>
+<tr><td class="info" colspan="2">Brak ustawionej nazwy użytkownika. Ustaw ją, wraz z hasłem, w polach poniżej, aby umożliwić logowanie bez użycia zewnętrznych serwisów. Ustawionej nazwy nie można potem zmienić.</td></tr>
 <tr><td>Login:</td><td><input type="text" name="login" value="<?= htmlspecialchars($profile['login']) ?>" /></td></tr>
 <tr><td>Hasło:</td><td><input type="password" name="pass" /></td></tr>
 <tr><td>Powtórz hasło:</td><td><input type="password" name="pass2" /></td></tr>
