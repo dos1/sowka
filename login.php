@@ -3,6 +3,18 @@ include_once('includes/functions.php');
 
 $page_title='Logowanie';
 
+$login['error']='';
+
+if ($_POST) {
+  if (($_POST['login']) && ($_POST['pass'])) {
+    $_USER = mysql_fetch_assoc(mysql_query("SELECT * FROM users WHERE login='".mysql_real_escape_string($_POST['login'])."' AND pass='".mysql_real_escape_string(hash('sha512','45Sówkalsk45adso238if:):D'.$_POST['pass'].'a\':LM:>').'d')."'"));
+    if ($_USER) {
+      $_SESSION['user_id'] = $_USER['id'];
+    }
+  }
+  if (!($_USER)) $login['error']='Wprowadzono niepoprawne dane.';
+}
+
 if (isset($_GET['mode'])) {
   if (($_GET['mode']=='google') || ($_GET['mode']=='openid')) {
     include_once 'includes/lightopenid/openid.php';
@@ -123,11 +135,12 @@ elseif (($_USER) && (isset($_GET['blog']))) {
   die();
 }
 elseif ($_USER) {
-  header('Location: '.$_CONFIG['siteurl'].'profile.php');
+  header('Location: '.$_CONFIG['siteurl'].'profile/');
   die();
 }
 
-$login['title']='Not implemented';
-$login['content']='Logowanie nie istnieje.';
+$login['title']='Logowanie';
+$login['loginform']=true;
+$login['content']='';
 
 include_once('themes/'.$_CONFIG['theme'].'/login.php');
