@@ -30,6 +30,7 @@ $facebook_enable = true;
 <link rel="alternate" type="application/rss+xml" title="Sówka - Komiks" href="/rss/" />
 
 <link rel="stylesheet" href="/themes/<?= $_CONFIG['theme'] ?>/style.css" />
+<link rel="stylesheet" href="/themes/<?= $_CONFIG['theme'] ?>/psuja.css" />
 <!--[if IE]>
 <link rel="stylesheet" href="/themes/<?= $_CONFIG['theme'] ?>/style-ie.css" />
 <![endif]-->
@@ -46,26 +47,10 @@ $facebook_enable = true;
 <![endif]-->
 <link rel="shortcut icon" href="/favicon.png" />
 
-<script src="/themes/<?= $_CONFIG['theme'] ?>/blinkeyes.js" async="async" type="text/javascript"></script>
 </head>
 <body>
-<div id="devwarning"><!--[if !IE]>--><b>Ostrzeżenie:</b> Wersja developerska. Treść jest przykładowa i nie wszystko jeszcze działa lub wygląda tak, jak powinno!<!--<![endif]-->
-<!--[if IE]><b>Ostrzeżenie:</b> Używasz <![if lte IE 6]><b><i>BARDZO</i></b> <![endif]>starej przeglądarki, <i>Internet Explorer</i>, która nie potrafi poprawnie 
-wyświetlić tej strony. <a href="http://browsehappy.pl/">Dowiedz się więcej</a> (Sówka - wersja developerska)
-<![endif]--></div>
 <div id="logo">
 <h1 id="header-sowka-logo"><a href="/"><?= $_CONFIG['sitename'] ?></a></h1>
-<div id="nav">
-<a style="-ms-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -o-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -moz-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -webkit-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg);"  href="/">Komiks</a>
-<a style="-ms-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -o-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -moz-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -webkit-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg);" href="/archive/">Archiwum</a>
-<a style="-ms-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -o-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -moz-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -webkit-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg);" href="/blog/">Blog</a>
-<a style="-ms-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -o-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -moz-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -webkit-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg);" href="/about/">O Sówce</a>
-<a style="-ms-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -o-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -moz-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -webkit-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg);" <? if (isset($_USER)) { ?> href="/profile/">Mój profil<?} else { ?> href="/login/">Zaloguj<? } ?></a>
-</div>
-<p class="like">
-<fb:like class="likeme" href="http://www.facebook.com/pages/S%C3%B3wka/128583487224662"></fb:like>
-<a target="_blank" href="http://www.facebook.com/pages/S%C3%B3wka/128583487224662">Sówka na Facebooku</a>
-</p>
 </div>
 <div id="wrapper">
 <? if ($_SOWKA['top']) { ?>
