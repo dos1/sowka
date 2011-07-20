@@ -31,5 +31,5 @@ include('header.php');?>
 <div id="comments">
 <h4>Komentarze</h4>
 <?= $page_comments ?></div>
-
+<?= show_ads(); ?>
 <?include('footer.php');?>

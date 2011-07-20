@@ -1,13 +1,19 @@
 #logo .like
 {
         text-align: center;
-        width: 500px;
+        width: 440px;
+	height: 110px;
 	position:absolute;
-	right:0;
-	top:-10px;
+	right:30px;
+	top:-5px;
         color: white;
         text-shadow: 1px 1px 4px black;
         font-size: 20px;
+	background-color: rgba(255,255,255,0.2);
+	border-radius: 15px;
+}
+#logo .like #premiera1 {
+	margin-top: 15px;
 }
 #logo .like #premiera2 {
         margin-top: -10px;
@@ -17,7 +23,7 @@
 #nav div
 {
         width:150px;
-        height:53px;
+        height:55px;
         background-image:url('images/menu.png');
         margin-left:10px;
         margin-bottom:30px;
