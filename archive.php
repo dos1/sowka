@@ -10,7 +10,7 @@ if ($_GET['actor']>0) {
   if (mysql_num_rows($q)>0) {
     $archive['actor']=mysql_fetch_array(mysql_query('SELECT * FROM actors WHERE id='.$_GET['actor']));
   }
-  else $q = mysql_query("SELECT * FROM strips ORDER BY id DESC");
+  else { $_GET['actor']=-1; $q = mysql_query("SELECT * FROM strips ORDER BY id DESC"); }
 }
 else {
   $q = mysql_query("SELECT * FROM strips ORDER BY id DESC");
