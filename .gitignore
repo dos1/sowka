@@ -1,9 +1,9 @@
 conf
-images/*.png
-images/*.jpg
-images/*.gif
-images/avatars
+images/*
+!images/index.html
+!images/.htaccess
 favicon.*
 thumbnails/*
 !thumbnails/index.html
 !thumbnails/.htaccess
+
