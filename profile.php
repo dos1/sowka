@@ -55,6 +55,10 @@ $profile['title']='Profil użytkownika';
 
 $user = mysql_fetch_assoc(mysql_query("SELECT users.*, COUNT(comments.id) as comment_count FROM users,comments WHERE comments.uid=users.id AND users.id=".$_GET['id']));
 
+if ($user['comment_count']==0) {
+  $user = mysql_fetch_assoc(mysql_query("SELECT users.*, 0 as comment_count FROM users WHERE users.id=".$_GET['id']));
+}
+
 foreach ($user as $key => $val) {
   $profile[$key] = $val;
 }
