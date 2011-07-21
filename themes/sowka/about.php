@@ -2,6 +2,6 @@
 $_SOWKA['top']="<h2>".$about['title']."</h2>";
 include('header.php');?>
 <div id="about">
-<p><?= $about['content'] ?></p>
+<?= $about['content'] ?>
 </div>
 <?include('footer.php');?>

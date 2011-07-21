@@ -79,7 +79,7 @@ body
 	padding:4px;
 }
 
-h1,h2,.share,#strip,#about,#profile,#login,#archive,#footer,#error,#blog .nav
+h1,h2,.share,#strip,#profile,#login,#archive,#footer,#error,#blog .nav
 {
 	text-align:center;
 }
@@ -128,6 +128,15 @@ a:hover,h1 a
 	text-align: justify;
 }
 
+#about {
+	text-align: justify;
+}
+#about img {
+	margin: 20px;
+}
+#about > img {
+	margin-top: 0px;
+}
 #nav
 {
 	text-align:center;
