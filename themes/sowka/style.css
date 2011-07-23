@@ -1,21 +1,23 @@
-@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light&text=RSOPWILTKA%C3%93&v2);
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light&text=RSOPWILTK%C3%93A&v2);
 @font-face {
 	font-family: "DejaVu Sans";
-	src: local("DejaVu Sans"), url('fonts/DejaVuSans.ttf');
+	font-weight: normal;
+	src: local("DejaVu Sans"), local("DejaVuSans"), url('fonts/DejaVuSans.ttf');
 }
 @font-face {
 	font-family: "DejaVu Sans";
 	font-weight: bold;
-	src: local("DejaVu Sans Bold"), url('fonts/DejaVuSans-Bold.ttf');
+	src: local("DejaVu Sans Bold"), local("DejaVuSansBold"), url('fonts/DejaVuSans-Bold.ttf');
 }
 /*@font-face {
 	font-family: "DejaVu Sans Condensed";
-	src: local("DejaVu Sans Condensed"), url('fonts/DejaVuSansCondensed.ttf');
+	font-weight: normal;
+	src: local("DejaVu Sans Condensed"), local("DejaVuSansCondensed"), url('fonts/DejaVuSansCondensed.ttf');
 }*/
 @font-face {
 	font-family: "DejaVu Sans Condensed";
 	font-weight: bold;
-	src: local("DejaVu Sans Condensed Bold"), url('fonts/DejaVuSansCondensed-Bold.ttf');
+	src: local("DejaVu Sans Condensed Bold"), local("DejaVuSansCondensedBold"), url('fonts/DejaVuSansCondensed-Bold.ttf');
 }
 body
 {
