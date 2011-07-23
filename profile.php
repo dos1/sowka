@@ -66,6 +66,13 @@ foreach ($user as $key => $val) {
 if (!$user) { include('404.php'); die(); }
 
 $profile['avatar']=get_user_avatar($user);
+
+if ($user['id']==$_USER['id']) {
+  $url='http://www.gravatar.com/avatar/'.md5(strtolower(trim($user['mail']))).'?rating=g&size=50&default=404';
+  $handle = fopen($url, "r");
+  if ($handle) $profile['gravatar']=1; else $profile['gravatar']=0;
+}
+
 $profile['fullname']=$user['name'].' '.$user['surname'];
 
 $profile['services']['Facebook']=0;

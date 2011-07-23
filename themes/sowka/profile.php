@@ -27,6 +27,11 @@ foreach ($profile['messages'] as $message) {
 }
  ?>
 <table>
+<? if ((!$profile['gravatar']) && (!($profile['facebook']))) { ?>
+<tr><td class="info" colspan="2" style="padding-bottom: 20px"><a href="http://pl.gravatar.com/site/signup/">Ustaw avatar</a></td></tr>
+<? } else if (($profile['gravatar']) && (!($profile['facebook']))) { ?>
+<tr><td class="info" colspan="2" style="padding-bottom: 20px"><a href="http://pl.gravatar.com/site/login/">Zmień avatar</a></td></tr>
+<? } ?>
 <tr><td>Imię:</td><td><input type="text" name="name" value="<?= htmlspecialchars($profile['name']) ?>" /></td></tr>
 <tr><td>Nazwisko:</td><td><input type="text" name="surname" value="<?= htmlspecialchars($profile['surname']) ?>" /></td></tr>
 <tr><td>Nazwa wyświetlana:</td><td><input type="text" name="nickname" value="<?= htmlspecialchars($profile['nickname']) ?>" /></td></tr>
