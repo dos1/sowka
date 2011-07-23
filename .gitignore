@@ -6,4 +6,4 @@ favicon.*
 thumbnails/*
 !thumbnails/index.html
 !thumbnails/.htaccess
-
+google*.html
