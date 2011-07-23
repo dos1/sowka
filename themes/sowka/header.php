@@ -19,6 +19,7 @@ $facebook_enable = true;
 <meta property="og:image" content="<? if ($page_image) { echo $page_image; } else { echo $_CONFIG['siteurl'].$_CONFIG['comics_path'].'logo.png'; } ?>" />
 <meta property="og:site_name" content="<?= $_CONFIG['sitename'] ?>" />
 <meta property="fb:admins" content="<?= $_CONFIG['fb']['admins'] ?>" />
+<meta property="fb:app_id" content="<?= $_CONFIG['fb']['appid'] ?>"/>
 
 <meta name="description" content="Komiks internetowy o Sówce mieszkającej na drzewie w ogródku u Pana Człowieka." />
 <meta name="keywords" content="sówka,sowa,sowy,komiks,comic,webcomic,drzewo,ptak,ptaki,humor,rysunek" />
@@ -44,8 +45,14 @@ $facebook_enable = true;
 <link rel="stylesheet" href="/themes/<?= $_CONFIG['theme'] ?>/style-ie6.css" />
 <script type="text/javascript" src="/themes/<?= $_CONFIG['theme'] ?>/supersleight-min.js"></script>
 <![endif]-->
-<link rel="shortcut icon" href="/favicon.png" />
+<?
+  $ua = getBrowser();
+  if (($ua['name']=='Opera') && ($ua['version']<=11.50)) {
+    print '<link rel="stylesheet" href="/themes/'.$_CONFIG['theme'].'/style-opera.css" />';
+  }
+?>
 
+<link rel="shortcut icon" href="/favicon.png" />
 <script src="/themes/<?= $_CONFIG['theme'] ?>/blinkeyes.js" async="async" type="text/javascript"></script>
 </head>
 <body>
