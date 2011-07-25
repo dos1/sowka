@@ -22,9 +22,14 @@ $blog['nav']['next'] = $id;
 $id = mysql_fetch_array(mysql_query("SELECT * FROM actors WHERE id = ".$blog['author']." LIMIT 1"));
 $blog['author'] = $id;
 
+include_once('includes/comments.php');
+
 if ((isset($_POST['comment'])) && (isset($_USER))) {
   mysql_query("INSERT INTO `comments` SET `aid`=".mysql_real_escape_string($blog['id']).", blog=1, uid=".mysql_real_escape_string($_USER['id']).
               ", content='".mysql_real_escape_string($_POST['comment'])."', date=NOW(), visible=1, deleted=0") or print mysql_error();
+  $id = mysql_insert_id();
+  $q = mysql_query("SELECT * FROM comments WHERE id=".$id);
+  comment_notify(mysql_fetch_assoc($q));
 }
 
 include_once('themes/'.$_CONFIG['theme'].'/functions/comments.php');
@@ -34,7 +39,7 @@ $q = mysql_query("SELECT * FROM comments WHERE aid=".$blog['id']." AND visible=1
 
 while ($comment = mysql_fetch_array($q)) {
   $user = get_user($comment['uid']);
-  $page_comments .= theme_comment($comment,$user);
+  $page_comments .= theme_comment($comment,$user,($id==$comment['id']));
 }
 
 if (isset($_USER)) {

@@ -507,6 +507,12 @@ h1 a:hover {
 	position: relative;
 	min-height: 80px;
 }
+#comments .comment:target {
+	border: 1px solid white;
+	box-shadow: 0px 0px 4px rgba(0,0,0,0.6);
+        background-color: rgba(255,255,255, 0.4);
+}
+
 #comments .comment:nth-of-type(odd) {
 	background-color: rgba(255,255,255, 0.3);
 }

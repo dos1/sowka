@@ -1,11 +1,14 @@
 <?
 //function theme_comment($id, $nick, $avatar, $url, $date, $content, $admin=0) {
-function theme_comment($comment, $user) {
+function theme_comment($comment, $user, $new_comment = 0) {
   setlocale(LC_ALL, 'pl_PL');
   $deleted = "<i>-usunięty-</i>";
   if (!$user) { $user['nickname']=$deleted; } else { $user['nickname']=htmlspecialchars($user['nickname']); }
   if ($user['admin']) { $admin='comment-user-admin'; $admintitle='title="Administrator"'; }
-  $komcie = "<div class=\"comment write-comment-quest\">";
+  if ($new_comment)
+    $komcie = "<div class=\"comment write-comment-quest\" id=\"new-comment\">";
+  else
+    $komcie = "<div class=\"comment write-comment-quest\" id=\"comment-".$comment['id']."\">";
   $komcie .= "<div class=\"comment-user\">";
   if ($user['nickname']!=$deleted) $komcie .= "<a href=\"/profile/".$user['id']."/\">"; else $komcie .= "<a>";
   $komcie .= "<img alt=\"Avatar\" src=\"".htmlspecialchars(get_user_avatar($user))."\" />";
@@ -22,11 +25,11 @@ function theme_comment($comment, $user) {
 function theme_write_comment_user() {
 global $_USER;
 $form  = '<div id="write-comment" class="comment write-comment-user">';
-$form .= '  <div class="comment-user"><div>Dodaj komentarz</div><div class="loggedas"><div>Zalogowany jako:</div><a href="'.$_USER['link'].'">'.$_USER['nickname'].'</a></div>';
+$form .= '  <div class="comment-user"><div>Dodaj komentarz</div><div class="loggedas"><div>Zalogowany jako:</div><a href="/profile/">'.$_USER['nickname'].'</a></div>';
 $form .= '  <div class="comment-disclaimer">Prosimy o zachowanie kultury dyskusji. Komentarze nie służą do obrażania, ani reklamowania się.';
 $form .= ' Wpisy niecenzuralne i obraźliwe będą natychmiast usuwane.</div>';
 $form .= '  </div>';
-$form .= '  <form method="POST" action="#write-comment">';
+$form .= '  <form method="POST" action="#new-comment">';
 $form .= '    <textarea name="comment" required="required" placeholder="Twój komentarz..."></textarea>';
 $form .= '    <input type="submit" value="Wyślij" />';
 $form .= '  </form>';

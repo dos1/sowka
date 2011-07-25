@@ -33,10 +33,14 @@ while ($row=mysql_fetch_assoc($q)) {
 }
 
 include_once('themes/'.$_CONFIG['theme'].'/functions/comments.php');
+include_once('includes/comments.php');
 
 if ((isset($_POST['comment'])) && (isset($_USER))) {
   mysql_query("INSERT INTO `comments` SET `aid`=".mysql_real_escape_string($comic['id']).", blog=0, uid=".mysql_real_escape_string($_USER['id']).
               ", content='".mysql_real_escape_string($_POST['comment'])."', date=NOW(), visible=1, deleted=0") or print mysql_error();
+  $id = mysql_insert_id();
+  $q = mysql_query("SELECT * FROM comments WHERE id=".$id);
+  comment_notify(mysql_fetch_assoc($q));
 }
 
 $page_comments="";
@@ -44,7 +48,7 @@ $q = mysql_query("SELECT * FROM comments WHERE aid=".$comic['id']." AND visible=
 
 while ($comment = mysql_fetch_array($q)) {
   $user = get_user($comment['uid']);
-  $page_comments.=theme_comment($comment,$user);
+  $page_comments .= theme_comment($comment,$user,($id==$comment['id']));
 }
 
 if (isset($_USER)) {
