@@ -1,0 +1,9 @@
+#wrapper {
+        border-width:95px 98px 103px;
+}
+#content {
+        margin-left: -16px;
+}
+#logo .like {
+	right: 10px;
+}

@@ -31,7 +31,7 @@ $height = $_THEME['width'] / ($size[0]/$size[1]);
  ?>
 <a href="/<?= $comic['src'] ?>"><img src="/thumbnail/<?= $_THEME['width'] ?>/<?= $comic['src'] ?>" alt="Komiks" title="<?= $comic['title'] ?>" width="<?= $_THEME['width'] ?>" height="<?= $height ?>" /></a>
   <? } else {?>
-<img src="/<?= $comic['src'] ?>" alt="Komiks" title="<?= $comic['title'] ?>" <?= $size[3] ?>/>
+<img src="/<?= $comic['src'] ?>" alt="Komiks" title="<?= $comic['title'] ?>" width="<?= $size[0] ?>" />
 <? } ?>
 
 <div id="actors">

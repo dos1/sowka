@@ -52,6 +52,12 @@ $facebook_enable = true;
   }
 ?>
 
+<link rel="stylesheet" href="/themes/<?= $_CONFIG['theme'] ?>/style-narrow.css" type="text/css" media="all and (max-device-width: 1100px)" />
+
+<link rel="stylesheet" href="/themes/<?= $_CONFIG['theme'] ?>/style-verynarrow.css" type="text/css" media="all and (max-device-width: 1023px)" />
+
+<meta name="viewport" content="width=800; initial-scale=1.0;"/>
+
 <link rel="shortcut icon" href="/favicon.png" />
 <script src="/themes/<?= $_CONFIG['theme'] ?>/blinkeyes.js" async="async" type="text/javascript"></script>
 </head>
