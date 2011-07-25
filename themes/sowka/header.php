@@ -56,10 +56,27 @@ $facebook_enable = true;
 
 <link rel="stylesheet" href="/themes/<?= $_CONFIG['theme'] ?>/style-verynarrow.css" type="text/css" media="all and (max-device-width: 1023px)" />
 
-<meta name="viewport" content="width=800; initial-scale=1.0;"/>
+<meta name="viewport" content="width=800"/>
 
 <link rel="shortcut icon" href="/favicon.png" />
 <script src="/themes/<?= $_CONFIG['theme'] ?>/blinkeyes.js" async="async" type="text/javascript"></script>
+
+<? if ($_CONFIG['GA-account']) { ?>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '<?= $_CONFIG['GA-account']; ?>']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<? } ?>
+
 </head>
 <body>
 <div id="devwarning"><!--[if !IE]>--><b>Ostrzeżenie:</b> Wersja developerska. Treść jest przykładowa i nie wszystko jeszcze działa lub wygląda tak, jak powinno!<!--<![endif]-->
