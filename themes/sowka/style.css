@@ -81,7 +81,7 @@ body
 	padding:4px;
 }
 
-h1,h2,.share,#strip,#profile,#login,#archive,#footer,#error,#blog .nav
+h1,h2,.share,#strip,#profile,#login,#register,#archive,#footer,#error,#blog .nav
 {
 	text-align:center;
 }
@@ -194,6 +194,7 @@ a:hover,h1 a
 	-webkit-border-image:url('images/nav-border.png') 4 4 4 4 stretch;
 	-ms-border-image:url('images/nav-border.png') 4 4 4 4 stretch;
 	border-image:url('images/nav-border.png') 4 4 4 4 stretch;
+	background-color: #d7ba79;
 	background-image:url('images/wood.jpg');
 	background-position:0px 0px;
 	background-repeat: repeat-x;
@@ -952,15 +953,15 @@ li { text-align: left; }
 	background-color: rgba(255,255,255,0.8);
 	opacity: 1;
 }
-#profile form .error, #profile form .message {
+form .error, form .message {
 	padding: 10px;
 	border-radius: 10px;
 	background-color: rgba(255,255,255,0.8);
 }
-#profile form .error {
+form .error {
 	color: red;
 }
-#profile form, #login form {
+#profile form, #login form, #register form {
 	margin-left: auto;
 	margin-right: auto;
         background-color: rgba(255,255,255,0.4);
@@ -991,6 +992,11 @@ li { text-align: left; }
 	text-align: right;
 	padding-bottom: 10px;
 }
+#register form {
+        background-image: url('images/login.png');
+        background-repeat: no-repeat;
+        background-position: 20px 20px;
+}
 #login form .info {
 	text-align: center;
 }
@@ -1002,26 +1008,26 @@ li { text-align: left; }
 #login form table {
 	width: 100%;
 }
-#profile form {
+#profile form, #register form {
 	width: 460px;
 }
-#profile form td {
+#profile form td, #register form td {
 	text-align: right;
 }
-#profile form td input, #profile form td textarea, #login form td input {
+#profile form td input, #profile form td textarea, #login form td input, #register form td input, #register form td textarea {
 	width: 100%;
 }
-#profile form td textarea {
+#profile form td textarea, #register form td textarea {
 	max-width: 300px;
 	min-width: 100%;
 }
-#profile form td.info {
+#profile form td.info, #register form td.info {
 	text-align: center;
 	font-size: 12px;
 	padding-top:10px;
 	padding-bottom: 10px;
 }
-#profile form td.info input {
+#profile form td.info input, #register form td.info input {
 	width: 90px;
 }
 #profile .userinfo {
@@ -1077,6 +1083,9 @@ li { text-align: left; }
 	background-color: rgba(255,255,255,0.3);
 	border-radius:10px;
 	margin: 0;
+}
+#register table {
+	width: 100%;
 }
 #ads {
 	display: block;

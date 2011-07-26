@@ -76,11 +76,13 @@ if (!$is_service) {
 }
 ?>
 </ul>
+<!--
 <? if ($services_left) { ?>
 <h5>Dodaj usługę</h5>
 <p>
 <?= $services_left ?>
 </p>
 <? } } ?>
+-->
 </div>
 <?include('footer.php');?>

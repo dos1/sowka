@@ -19,11 +19,8 @@ if (($profile['me']) && ($_POST)) {
                 mysql_real_escape_string($_POST['surname']), mysql_real_escape_string($_POST['nickname']), mysql_real_escape_string($_POST['mail']), mysql_real_escape_string($_POST['link']), mysql_real_escape_string($_POST['about']))) or print mysql_error();
     $profile['messages'][]='Zmiana danych w profilu zakończona pomyślnie.';
     if (($_POST['login']) && (($_POST['pass']) || ($_POST['pass2']))) {
-      if (mysql_num_rows(mysql_query(sprintf("SELECT * FROM users WHERE login-active=1, login = '%s'", mysql_real_escape_string($_POST['login']))))>0) {
+      if (mysql_num_rows(mysql_query(sprintf("SELECT * FROM users WHERE `login-active`=1 AND `login` = '%s'", mysql_real_escape_string($_POST['login']))))>0) {
         $profile['error']='Podany login został już zajęty.';
-      }
-      else if (!validEmail($_POST['mail'])) {
-        $profile['error']='Wprowadzono niepoprawny adres e-mail.';
       }
       else if ($_POST['pass']!=$_POST['pass2']) {
         $profile['error']='Wprowadzone hasła nie pasują do siebie.';
