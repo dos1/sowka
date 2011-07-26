@@ -62,8 +62,4 @@ $page_permalink = $_CONFIG['siteurl'].$comic['id'].'/';
 $page_image = $_CONFIG['siteurl'].$comic['src'];
 $page_title = $comic['name'];
 
-if (($comic['src']==$_CONFIG['comics_path'].'standzioba.png') && (isset($_GET['trele'])) && ($_GET['trele']=='morele')) {
-  $comic['src']=$_CONFIG['comics_path'].'standzioba-full.png';
-}
-
 include_once('themes/'.$_CONFIG['theme'].'/comic.php');

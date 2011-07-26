@@ -61,10 +61,13 @@ $plusone_enable = true;
 <g:plusone size="medium" style="position: relative; top: -6px;" count="false" href="<?= $_CONFIG['siteurl'] ?><?= $comic['id'] ?>/"></g:plusone>
 <fb:like style="position: relative; top: -4px;" layout="button_count" href="<?= $_CONFIG['siteurl'] ?><?= $comic['id'] ?>/"></fb:like>
 </div>
-<?= theme_navigation($comic) ?>
-<p class="permalink">Permalink: <?= $_CONFIG['siteurl'] ?><?= $comic['id'] ?>/<br/>
+<?= theme_navigation($comic);
+setlocale(LC_ALL, 'pl_PL'); ?>
+<p class="permalink">Data: <?= strftime('%d %B %Y', strtotime($comic['date'])) ?><br />Permalink: <?= $_CONFIG['siteurl'] ?><?= $comic['id'] ?>/<br/>
 URL: <?= $_CONFIG['siteurl'] ?><?= $comic['src'] ?></p>
 </div>
+
+
 
 <div id="comments">
 <h4>Komentarze</h4>
