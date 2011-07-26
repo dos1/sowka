@@ -43,4 +43,4 @@ ExpiresByType text/css A900
 ExpiresByType font/ttf A6048000
 AddOutputFilterByType DEFLATE font/ttf
 
-ExpiresByType text/css A0
+#ExpiresByType text/css A0
