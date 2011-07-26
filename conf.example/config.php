@@ -19,3 +19,14 @@ $_CONFIG['blip']['CONSUMER_SECRET'] = 'abcdef1234567890abcedf1234567890ABCDEF12'
 $_CONFIG['blip']['TOKEN_KEY']       = 'abcdef1234567890ABCD';
 $_CONFIG['blip']['TOKEN_SECRET']    = 'abcdef1234567890abcdef1234567890ABCDEF12';
 
+$_CONFIG['blip']['notify-user'] = 'sowi';
+$_CONFIG['blip']['notify-msg']  = 'Nowy komć u Sówki!';
+
+$_CONFIG['admin-sitename'] = 'Sowi patrol';
+$_CONFIG['admin-siteurl'] = 'http://127.0.0.1/';
+
+//$_CONFIG['GA-account'] = 'UA-123456789';
+
+function show_ads() {
+  return '<div id="ads"><a href="http://sowka.art.pl/">Sówka</a></div>';
+}
