@@ -22,6 +22,7 @@ if ($profile['me']) {
 <? if ($profile['error']) { ?>
 <p class="error"><?= $profile['error']?></p>
 <? }
+if ($profile['messages'])
 foreach ($profile['messages'] as $message) {
   print "<p class=\"message\">".$message."</p>";
 }
@@ -54,7 +55,7 @@ foreach ($profile['messages'] as $message) {
 <tr><td class="info" colspan="2"><input type="submit" value="Wyślij" /></td></tr>
 </table>
 </form>
-<h4>Usługi zewnętrzne</h4>
+<h4 id="services">Usługi zewnętrzne</h4>
 <p class="services">Profil został zarejestrowany przy użyciu następujących usług:</p>
 <ul class="services">
 <?
@@ -66,9 +67,9 @@ foreach ($profile['services'] as $service => $val) {
     print '<li>'.$service.'</li>';
   }
   else {
-    if ($service=='Facebook') $services_left.="<fb:login-button class=\"login-facebook\" perms=\"email\" onlogin=\"window.location='".$_CONFIG['siteurl'].'profile/facebook/'."';\">Facebook</fb:login-button> ";
-    elseif ($service=='Konta Google') $services_left.="<a href=\"/profile/google/\" class=\"login-google\">Konto Google</a> ";
-    elseif ($service=='OpenID') $services_left.="<a href=\"/profile/openid/\" class=\"login-openid\">OpenID</a>";
+    if ($service=='Facebook') $services_left.="<fb:login-button class=\"login-facebook\" perms=\"email\" onlogin=\"window.location='".$_CONFIG['siteurl'].'profile/add/facebook/'."';\">Facebook</fb:login-button> ";
+    elseif ($service=='Konta Google') $services_left.="<a href=\"/profile/add/google/\" class=\"login-google\">Konto Google</a> ";
+    elseif ($service=='OpenID') $services_left.="<a href=\"/profile/add/openid/\" class=\"login-openid\">OpenID</a>";
   }
 }
 if (!$is_service) {
@@ -76,13 +77,13 @@ if (!$is_service) {
 }
 ?>
 </ul>
-<!--
+
 <? if ($services_left) { ?>
 <h5>Dodaj usługę</h5>
 <p>
 <?= $services_left ?>
 </p>
 <? } } ?>
--->
+
 </div>
 <?include('footer.php');?>

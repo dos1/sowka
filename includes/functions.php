@@ -33,6 +33,8 @@ if (isset($_SESSION['user_id'])) {
   $_USER = mysql_fetch_assoc(mysql_query("SELECT * FROM users WHERE id=".$_SESSION['user_id']));
 }
 
+if (!($fb_dontlogin==1)) {
+
 $cookie = get_facebook_cookie($_CONFIG['fb']['appid'], $_CONFIG['fb']['secret']);
 
 $facebook = new Facebook(array(
@@ -85,6 +87,7 @@ if (($cookie) && (!(isset($_USER)))) {
   catch (Exception $e) {
     //print $e->getMessage();
   }
+}
 }
 
 function get_user($id) {

@@ -34,7 +34,7 @@ $return_url='/'.$_GET['comic'];
 <? } ?>
 
 <? if ($login['content']) { ?>
-<p><?= $login['content'] ?></p>
+<?= $login['content'] ?>
 <? } ?>
 </div>
 <?include('footer.php');?>

@@ -19,7 +19,7 @@ if (isset($_GET['mode'])) {
   if (($_GET['mode']=='google') || ($_GET['mode']=='openid')) {
     include_once 'includes/lightopenid/openid.php';
     try {
-      $openid = new LightOpenID;
+      $openid = new LightOpenID($_CONFIG['siteurl']);
 
       if(!($openid->mode)) {
               if ($_GET['mode']=='google') $openid->identity = 'https://www.google.com/accounts/o8/id';
@@ -40,7 +40,6 @@ if (isset($_GET['mode'])) {
                $login['title']='Logowanie';
                include_once('themes/'.$_CONFIG['theme'].'/functions/login.php');
                $login['content']=theme_login_openid_form();
-
                include_once('themes/'.$_CONFIG['theme'].'/login.php');
                die();
              }
@@ -120,7 +119,11 @@ if (((!isset($me['namePerson'])) && (!isset($me['namePerson/friendly'])) && ((!i
 }
       }
     } catch(ErrorException $e) {
-      echo $e->getMessage();
+               $login['title']='Logowanie';
+               include_once('themes/'.$_CONFIG['theme'].'/functions/login.php');
+               $login['content']='<p class="error">'.htmlspecialchars($e->getMessage()).'</p>'.theme_login_openid_form();
+               include_once('themes/'.$_CONFIG['theme'].'/login.php');
+               die();
     }
 
   }
