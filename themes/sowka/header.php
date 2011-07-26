@@ -79,10 +79,10 @@ $facebook_enable = true;
 
 </head>
 <body>
-<div id="devwarning"><!--[if !IE]>--><b>Ostrzeżenie:</b> Wersja developerska. Treść jest przykładowa i nie wszystko jeszcze działa lub wygląda tak, jak powinno!<!--<![endif]-->
+<?/*<div id="devwarning"><!--[if !IE]>--><b>Ostrzeżenie:</b> Wersja developerska. Treść jest przykładowa i nie wszystko jeszcze działa lub wygląda tak, jak powinno!<!--<![endif]-->*/?>
 <!--[if IE]><b>Ostrzeżenie:</b> Używasz <![if lte IE 6]><b><i>BARDZO</i></b> <![endif]>starej przeglądarki, <i>Internet Explorer</i>, która nie potrafi poprawnie 
-wyświetlić tej strony. <a href="http://browsehappy.pl/">Dowiedz się więcej</a> (Sówka - wersja developerska)
-<![endif]--></div>
+wyświetlić tej strony. <a href="http://browsehappy.pl/">Dowiedz się więcej</a></div>
+<![endif]-->
 <div id="logo">
 <h1 id="header-sowka-logo"><a href="/"><?= $_CONFIG['sitename'] ?></a></h1>
 <div id="nav">
