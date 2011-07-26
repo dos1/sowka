@@ -6,8 +6,8 @@
 }
 .like {
         behavior: url("/themes/sowka/border-radius.htc");
-	border: 1px solid white;   /*    usunąć    */
-	background-color: #aadfff; /* po premierze */
+/*	border: 1px solid white;       usunąć    
+	background-color: #aadfff;  po premierze */
 }
 .likeme {
 	background-color: #e0f0ff;
