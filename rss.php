@@ -75,7 +75,7 @@ foreach ($list as $news) {
     echo('
      <item>
        <title>'.$news['name'].'</title>
-       <link><![CDATA['.$_CONFIG['siteurl'].$news['id'].']]></link>
+       <link><![CDATA['.$_CONFIG['siteurl'].$news['id'].'/]]></link>
        <pubDate>'.date('r',strtotime($news['date'])).'</pubDate>
        <description><![CDATA[<p><img src="'.$_CONFIG['siteurl'].$_CONFIG['comics_path'].$news['src'].'" alt="Komiks" title="'.$news['title'].'"/></p>'.$news['comment'].']]></description>
      </item>
@@ -85,7 +85,7 @@ foreach ($list as $news) {
     echo('
      <item>
        <title>Blog - '.$news['name'].'</title>
-       <link><![CDATA['.$_CONFIG['siteurl'].'blog/'.$news['id'].']]></link>
+       <link><![CDATA['.$_CONFIG['siteurl'].'blog/'.$news['id'].'/]]></link>
        <pubDate>'.date('r',strtotime($news['date'])).'</pubDate>
        <description><![CDATA['.$news['content'].']]></description>
      </item>
