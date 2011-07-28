@@ -1,11 +1,9 @@
 <?
 $_THEME['width'] = 786;
 $facebook_enable = true;
-?>
-<? /*echo '<?xml version="1.0" encoding="utf-8"?>';
+?><? /*echo '<?xml version="1.0" encoding="utf-8"?>';
    echo '<?xml-stylesheet type="text/css" href="/themes/default/style.css"?>';*/
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="pl">
 <head>
 <meta charset="utf-8" />

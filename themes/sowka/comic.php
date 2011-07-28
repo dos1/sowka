@@ -73,6 +73,7 @@ URL: <?= $_CONFIG['siteurl'] ?><?= $comic['src'] ?></p>
 <h4>Komentarze</h4>
 <?= $page_comments ?>
 </div>
+<!--<p class="toplists" style="text-align: center"><a href="http://komiksy.toplista.pl/?we=dos"><span style="width:120px;height:40px;overflow:hidden;background:#EE8800;border:2px;border-color:#FFAA22;border-style:outset;padding:5px;font:bold 11px verdana;color:white;text-decoration:none;text-align:center;cursor:pointer">Toplista Komiksy</span></a> <a href="http://komiks.toplista.pl/?we=sowka"><span style="width:120px;height:40px;overflow:hidden;background:#EE0000;border:2px;border-color:#FF2222;border-style:outset;padding:5px;font:bold 11px verdana;color:white;text-decoration:none;text-align:center;cursor:pointer">Toplista Komiks</span></a></p>-->
 <?= show_ads() ?>
-<p class="toplists" style="text-align: center"><a href="http://komiksy.toplista.pl/?we=dos"><span style="width:120px;height:40px;overflow:hidden;background:#EE8800;border:2px;border-color:#FFAA22;border-style:outset;padding:5px;font:bold 11px verdana;color:white;text-decoration:none;text-align:center;cursor:pointer">Toplista Komiksy</span></a> <a href="http://komiks.toplista.pl/?we=sowka"><span style="width:120px;height:40px;overflow:hidden;background:#EE0000;border:2px;border-color:#FF2222;border-style:outset;padding:5px;font:bold 11px verdana;color:white;text-decoration:none;text-align:center;cursor:pointer">Toplista Komiks</span></a></p>
+
 <?include('footer.php');?>

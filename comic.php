@@ -62,4 +62,6 @@ $page_permalink = $_CONFIG['siteurl'].$comic['id'].'/';
 $page_image = $_CONFIG['siteurl'].$comic['src'];
 $page_title = $comic['name'];
 
+$display_toplists = 1;
+
 include_once('themes/'.$_CONFIG['theme'].'/comic.php');
