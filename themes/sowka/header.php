@@ -28,7 +28,7 @@ $facebook_enable = true;
 <link rel="index" title="Sówka" href="/" />
 <link rel="alternate" type="application/rss+xml" title="Sówka - Komiks" href="/rss/" />
 
-<link rel="stylesheet" href="/themes/<?= $_CONFIG['theme'] ?>/style.css" />
+<link rel="stylesheet" href="/themes/<?= $_CONFIG['theme'] ?>/style.css?r2" />
 <!--[if IE]>
 <link rel="stylesheet" href="/themes/<?= $_CONFIG['theme'] ?>/style-ie.css" />
 <![endif]-->
@@ -50,9 +50,9 @@ $facebook_enable = true;
   }
 ?>
 
-<link rel="stylesheet" href="/themes/<?= $_CONFIG['theme'] ?>/style-narrow.css" type="text/css" media="all and (max-device-width: 1100px)" />
+<link rel="stylesheet" href="/themes/<?= $_CONFIG['theme'] ?>/style-narrow.css?r2" type="text/css" media="all and (max-device-width: 1100px)" />
 
-<link rel="stylesheet" href="/themes/<?= $_CONFIG['theme'] ?>/style-verynarrow.css" type="text/css" media="all and (max-device-width: 1023px)" />
+<link rel="stylesheet" href="/themes/<?= $_CONFIG['theme'] ?>/style-verynarrow.css?r2" type="text/css" media="all and (max-device-width: 1023px)" />
 
 <meta name="viewport" content="width=800"/>
 
