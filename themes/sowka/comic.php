@@ -25,6 +25,8 @@ include('header.php');
 ?>
 <div id="strip">
 
+<a href="http://komiksy.toplista.pl/?we=dos" class="toplista">Głosuj na Sówkę na topliście KOMIKSY!</a>
+
 <? $size = getimagesize($comic['src']);
    if ($size[0]>$_THEME['width']) {
 $height = $_THEME['width'] / ($size[0]/$size[1]);

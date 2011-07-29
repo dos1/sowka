@@ -1266,3 +1266,19 @@ background-image: url('images/rss.gif');
 background-repeat: no-repeat;
 background-position: 6px 6px;
 }
+#strip .toplista {
+display: block;
+position: absolute;
+top: -60px;
+right: -88px;
+text-indent: -9999px;
+overflow: hidden;
+width: 76px;
+height: 308px;
+background-image: url('images/toplista.png');
+background-repeat: no-repeat;
+background-position: 0px 0px;
+}
+#strip .toplista:hover {
+background-position: -76px 0px;
+}
