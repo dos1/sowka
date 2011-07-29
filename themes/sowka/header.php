@@ -83,6 +83,9 @@ wyświetlić tej strony. <a href="http://browsehappy.pl/">Dowiedz się więcej</
 <![endif]-->
 <div id="logo">
 <h1 id="header-sowka-logo"><a href="/"><?= $_CONFIG['sitename'] ?></a></h1>
+<div id="topnav">
+<a href="/rss/" class="rss">RSS</a>
+</div>
 <div id="nav">
 <a style="-ms-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -o-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -moz-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -webkit-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg);"  href="/">Komiks</a>
 <a style="-ms-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -o-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -moz-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); -webkit-transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg); transform: rotate(<?=rand(-2,2);?>.<?=rand(0,99)?>deg);" href="/archive/">Archiwum</a>

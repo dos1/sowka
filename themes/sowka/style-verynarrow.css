@@ -95,3 +95,6 @@ h1 {
         -ms-border-image:url('images/borders2.png') 9 12 11 44 repeat stretch;
         border-image:url('images/borders2.png') 9 12 11 44 repeat stretch;
 }
+#topnav {
+	top: 5px;
+}
