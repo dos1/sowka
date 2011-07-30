@@ -19,8 +19,8 @@ $facebook_enable = true;
 <meta property="fb:admins" content="<?= $_CONFIG['fb']['admins'] ?>" />
 <meta property="fb:app_id" content="<?= $_CONFIG['fb']['appid'] ?>"/>
 
-<meta name="description" content="Komiks internetowy o Sówce mieszkającej na drzewie w ogródku u Pana Człowieka." />
-<meta name="keywords" content="sówka,sowa,sowy,komiks,comic,webcomic,drzewo,ptak,ptaki,humor,rysunek" />
+<meta name="description" content="Komiks internetowy o sympatycznej Sówce mieszkającej na drzewie w ogródku u Pana Człowieka." />
+<meta name="keywords" content="sówka,sowa,sowy,komiks,comic,webcomic,drzewo,ptak,ptaki,humor,rysunek,webkomiks" />
 <meta name="author" content="Agata Kurczewska" />
 <meta name="content-title" content="Sówka" />
 <meta name="content-language" content="pl" />
