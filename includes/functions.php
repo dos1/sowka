@@ -1,6 +1,8 @@
 <?
-session_start();
 require('conf/config.php');
+session_set_cookie_params(0, '/', $_CONFIG['cookie_domain'], false, true);
+session_start();
+
 include('includes/validmail.php');
 
 $baza = mysql_connect ($_CONFIG['mysql_host'], $_CONFIG['mysql_user'], $_CONFIG['mysql_pass']) or die('Nie można połączyć się z bazą danych ponieważ: ' . mysql_error());
