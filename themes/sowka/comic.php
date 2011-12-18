@@ -49,7 +49,7 @@ foreach ($comic['actors'] as $actor) {
 ?>
 </div>
 
-<p><?= $comic['comment'] ?></p>
+<p style="margin-top: 50px"><?= $comic['comment'] ?></p>
 
 <div class="share">
 <?
