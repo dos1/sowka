@@ -183,7 +183,7 @@ a:hover,h1 a
 	-webkit-transition: -webkit-transform 0.3s;
 	-o-transition: -o-transform 0.3s;
 	-ms-transition: -ms-transform 0.3s;
-	transition: all 0.3s; 
+	transition: transform 0.3s; 
 }
 
 #wrapper #top .nav a, #top a.link-prev, #top a.link-next
@@ -239,7 +239,7 @@ h1 a
 	-webkit-transition: -webkit-transform 0.3s ease;
 	-o-transition: -o-transform 0.3s ease;
 	-ms-transition: -ms-transform 0.3s ease;
-	transition: all 0.3s ease;
+	transition: transform 0.3s ease;
 }
 
 h1 {
@@ -319,7 +319,7 @@ h1 a:hover {
 	-webkit-transition: opacity 0.3s;
 	-o-transition: opacity 0.3s;
 	-ms-transition: opacity 0.3s;
-	transition: all 0.3s;
+	transition: opacity 0.3s;
 }
 .like a:hover{
 	opacity: 1;
@@ -417,7 +417,7 @@ h1 a:hover {
 	-webkit-transition: -webkit-transform 0.3s;
 	-o-transition: -o-transform 0.3s;
 	-ms-transition: -ms-transform 0.3s;
-	transition: all 0.3s; 
+	transition: transform 0.3s; 
 }
 
 #nav a:hover
@@ -471,7 +471,7 @@ h1 a:hover {
 	-webkit-transition: right 1.5s ease 10s;
 	-o-transition: right 1.5s ease 10s;
 	-ms-transition: right 1.5s ease 10s;
-	transition: all 1.5s ease 10s;
+	transition: right 1.5s ease 10s;
 
 	background-image: url('images/sowka-footer.png');
 	background-repeat: no-repeat;
@@ -488,7 +488,7 @@ h1 a:hover {
 	-webkit-transition: right 1s ease 3s;
 	-o-transition: right 1s ease 3s;
 	-ms-transition: right 1s ease 3s;
-	transition: all 1s ease 3s;
+	transition: right 1s ease 3s;
 
 	right: -31px;
 }
@@ -527,7 +527,7 @@ h1 a:hover {
         -webkit-transition: -webkit-transform 1s ease;
         -o-transition: -o-transform 1s ease;
         -ms-transition: -ms-transform 1s ease;
-        transition: all 1s ease;
+        transition: transform 1s ease;
 
 	border: 3px solid white;
 	box-shadow: 0px 0px 3px black;
@@ -822,11 +822,11 @@ div#actors {
   opacity: 0.6;
   overflow: hidden;
   z-index: 2;
-        -moz-transition: all 0.3s;
+        -moz-transition: opacity 0.3s;
         -webkit-transition: opacity 0.3s;
         -o-transition: opacity 0.3s;
         -ms-transition: opacity 0.3s;
-        transition: all 0.3s;
+        transition: opacity 0.3s;
 }
 div#actors p {
   text-align: center;
@@ -1259,7 +1259,7 @@ border-bottom-right-radius: 5px;
         -webkit-transition: opacity 0.3s;
         -o-transition: opacity 0.3s; 
         -ms-transition: opacity 0.3s;
-        transition: all 0.3s;
+        transition: opacity 0.3s;
 }
 #topnav a:hover {
 opacity: 1;
