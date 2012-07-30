@@ -66,11 +66,11 @@ body
 	width:800px;
 	border: 4px solid #ac846a;
 	border-radius:5px;
-	-moz-border-image:url('images/deska.png') 95 108 103 108 stretch repeat;
-	-webkit-border-image:url('images/deska.png') 95 108 103 108 stretch repeat;
-	-o-border-image:url('images/deska.png') 95 108 103 108 stretch repeat;
-	-ms-border-image:url('images/deska.png') 95 108 103 108 stretch repeat;
-	border-image:url('images/deska.png') 95 108 103 108 stretch repeat;
+	-moz-border-image:url('images/deska.png') 95 108 103 108 stretch stretch;
+	-webkit-border-image:url('images/deska.png') 95 108 103 108 stretch stretch;
+	-o-border-image:url('images/deska.png') 95 108 103 108 stretch stretch;
+	-ms-border-image:url('images/deska.png') 95 108 103 108 stretch stretch;
+	border-image:url('images/deska.png') 95 108 103 108 stretch stretch;
 	margin-left:auto;
 	margin-right:auto;
 	min-height:100%;
@@ -1285,4 +1285,13 @@ background-position: 0px 0px;
 }
 #strip .toplista:hover {
 background-position: -76px 0px;
+}
+.likeme > span {
+    background-color:  rgba(255,255,255,0.3);
+    height:  66px !important;
+    margin-top:  -2px;
+    padding-top: 2px;
+}
+.login-facebook {
+    top: 3px;
 }

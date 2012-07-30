@@ -28,7 +28,7 @@ $facebook_enable = true;
 <link rel="index" title="Sówka" href="/" />
 <link rel="alternate" type="application/rss+xml" title="Sówka - Komiks" href="/rss/" />
 
-<link rel="stylesheet" href="/themes/<?= $_CONFIG['theme'] ?>/style.css?r2" />
+<link rel="stylesheet" href="/themes/<?= $_CONFIG['theme'] ?>/style.css?r3" />
 <!--[if IE]>
 <link rel="stylesheet" href="/themes/<?= $_CONFIG['theme'] ?>/style-ie.css" />
 <![endif]-->
