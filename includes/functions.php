@@ -10,7 +10,7 @@ $baza = mysql_connect ($_CONFIG['mysql_host'], $_CONFIG['mysql_user'], $_CONFIG[
 mysql_query("SET NAMES utf8");
 mysql_query("SET CHARACTER SET utf8_polish_ci");
 
-mysql_select_db ($_CONFIG['mysql_db']);
+mysql_select_db ($_CONFIG['mysql_db']) or die(mysql_error());
 
 include_once('includes/facebook/src/facebook.php');
 
